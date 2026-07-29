@@ -1,0 +1,24 @@
+# Secrets - NEVER commit these
+.env
+client_secret.json
+token.pickle
+token_analytics.pickle
+
+# Editor history folder (VS Code)
+.history/
+
+# Generated media (large files, regenerated each run, don't need in repo)
+assets/audio/
+assets/media/
+assets/final_videos/
+assets/thumbnails/
+
+# Runtime databases (regenerated/updated each run)
+database/*.json
+
+# Duplicate nested folder from earlier extraction mistake
+youtube-automation/
+
+# Python cache
+__pycache__/
+*.pyc
