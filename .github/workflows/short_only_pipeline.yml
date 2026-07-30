@@ -36,6 +36,7 @@ jobs:
           echo "${{ secrets.CLIENT_SECRET_JSON_B64 }}" | base64 -d > client_secret.json
           echo "${{ secrets.TOKEN_PICKLE_B64 }}" | base64 -d > token.pickle
           echo "${{ secrets.TOKEN_ANALYTICS_PICKLE_B64 }}" | base64 -d > token_analytics.pickle
+          echo "UPLOAD_PRIVACY_STATUS=${{ secrets.UPLOAD_PRIVACY_STATUS }}" >> .env
 
       - name: Run short-only pipeline
         run: |
