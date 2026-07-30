@@ -4,19 +4,23 @@ client_secret.json
 token.pickle
 token_analytics.pickle
 
-# Editor history folder (VS Code)
+# Editor history folder
 .history/
 
-# Generated media (large files, regenerated each run, don't need in repo)
+# Generated media (large, regenerated each run)
 assets/audio/
 assets/media/
 assets/final_videos/
 assets/thumbnails/
 
-# Runtime databases (regenerated/updated each run)
-database/*.json
+# Ephemeral per-run data (only "latest" entry matters, no need for history)
+database/topics.json
+database/research.json
+database/scripts.json
+database/media.json
+database/seo.json
 
-# Duplicate nested folder from earlier extraction mistake
+# Duplicate nested folder from earlier mistake
 youtube-automation/
 
 # Python cache

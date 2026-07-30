@@ -1,0 +1,58 @@
+name: YouTube Full Pipeline (Short + Long)
+
+on:
+  schedule:
+    - cron: '30 2 * * *'   # 8:00 AM IST
+    - cron: '30 14 * * *'  # 8:00 PM IST
+  workflow_dispatch:  # allows manual "Run workflow" button too
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore secrets and credentials
+        run: |
+          echo "YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}" >> .env
+          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
+          echo "PEXELS_API_KEY=${{ secrets.PEXELS_API_KEY }}" >> .env
+          echo "NICHE_KEYWORDS=${{ secrets.NICHE_KEYWORDS }}" >> .env
+          echo "REGION_CODE=US" >> .env
+          echo "${{ secrets.CLIENT_SECRET_JSON_B64 }}" | base64 -d > client_secret.json
+          echo "${{ secrets.TOKEN_PICKLE_B64 }}" | base64 -d > token.pickle
+          echo "${{ secrets.TOKEN_ANALYTICS_PICKLE_B64 }}" | base64 -d > token_analytics.pickle
+
+      - name: Run pipeline
+        run: |
+          python agents/topic_agent.py
+          python agents/research_agent.py
+          python agents/script_agent.py
+          python agents/voice_agent.py
+          python agents/media_agent.py
+          python agents/editor_agent.py
+          python agents/thumbnail_agent.py
+          python agents/seo_agent.py
+          python agents/upload_agent.py
+
+      - name: Save upload history back to repo
+        run: |
+          git config user.name "YouTube Automation Bot"
+          git config user.email "actions@github.com"
+          git add database/uploads.json
+          git diff --staged --quiet || git commit -m "Log new upload [skip ci]"
+          git push

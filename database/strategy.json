@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2026-07-26T07:28:58.082845+00:00",
+    "total_video_count": 4,
+    "strategy": {
+      "confidence_level": "low",
+      "format_focus": {
+        "short_weight": 0.5,
+        "long_weight": 0.5,
+        "reasoning": "With only 4 uploads and zero statistical data available yet, continuing a 50/50 paired strategy allows us to test which format drives better audience retention and conversion for each topic."
+      },
+      "niche_status": "keep_current",
+      "niche_reasoning": "With only 4 videos uploaded, it is far too early to make directional changes or niche adjustments. We need to publish at least 20 videos to gather sufficient baseline analytics.",
+      "suggested_niche_keywords": [],
+      "next_topic_patterns": [
+        "Rescued Stray Puppy Identity Reveal ('He Thought He Rescued a Stray Puppy... Vets Were Stunned')",
+        "Extreme Animal Physical Transformation ('Severely Matted Stray Dog Gets Life-Changing Transformation')",
+        "Unlikely Interspecies Friendships ('Rescued Wild Fox Cub Refuses to Leave His Golden Retriever Companion')",
+        "Heroic Animal True Stories ('How a Trained Dog Saved an Entire Village from a Landslide')"
+      ],
+      "action_summary": "Maintain the current niche and 50/50 paired Short + Long publishing approach. Test 3-4 more emotional animal transformation and rescue storytelling concepts to gather initial viewer performance data."
+    }
+  }
+]
