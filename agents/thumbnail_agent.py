@@ -27,6 +27,7 @@ import shutil
 import subprocess
 import textwrap
 from PIL import Image, ImageDraw, ImageFont
+from _pipeline_utils import safe_run
 
 SCRIPTS_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "scripts.json")
 MEDIA_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "media.json")
@@ -176,4 +177,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    safe_run(run, "Topic Agent")

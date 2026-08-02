@@ -32,6 +32,7 @@ jobs:
           echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
           echo "PEXELS_API_KEY=${{ secrets.PEXELS_API_KEY }}" >> .env
           echo "NICHE_KEYWORDS=${{ secrets.NICHE_KEYWORDS }}" >> .env
+          echo "OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}" >> .env
           echo "REGION_CODE=US" >> .env
           echo "${{ secrets.CLIENT_SECRET_JSON_B64 }}" | base64 -d > client_secret.json
           echo "${{ secrets.TOKEN_PICKLE_B64 }}" | base64 -d > token.pickle

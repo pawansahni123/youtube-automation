@@ -17,6 +17,7 @@ Run standalone for testing:
 """
 
 import os
+from _pipeline_utils import safe_run, call_gemini
 import re
 import json
 import time
@@ -26,8 +27,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL_NAME = "gemini-flash-latest"
 
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "..")
 ENV_PATH = os.path.join(PROJECT_ROOT, ".env")
@@ -37,9 +36,7 @@ STRATEGY_DB_PATH = os.path.join(PROJECT_ROOT, "database", "strategy.json")
 CHANGELOG_PATH = os.path.join(PROJECT_ROOT, "database", "strategy_changelog.json")
 STRATEGY_DIR = os.path.join(PROJECT_ROOT, "assets", "strategy")
 
-# Minimum videos before we trust the data enough to auto-apply a niche pivot.
 NICHE_PIVOT_MIN_VIDEOS = 20
-# Confidence levels allowed to trigger an automatic .env change.
 AUTO_APPLY_CONFIDENCE_LEVELS = {"medium", "high"}
 
 
@@ -51,29 +48,6 @@ def load_json(path, default=None):
             return json.load(f)
         except json.JSONDecodeError:
             return default if default is not None else []
-
-
-def call_gemini(prompt, max_retries=4):
-    if not GEMINI_API_KEY:
-        raise ValueError("GEMINI_API_KEY missing. Set it in your .env file.")
-
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent"
-    body = {"contents": [{"parts": [{"text": prompt}]}]}
-
-    wait_seconds = 15
-    for attempt in range(1, max_retries + 1):
-        response = requests.post(url, params={"key": GEMINI_API_KEY}, json=body, timeout=60)
-        if response.status_code == 429 and attempt < max_retries:
-            print(f"[Strategy Agent] Rate limited. Waiting {wait_seconds}s...")
-            time.sleep(wait_seconds)
-            wait_seconds *= 2
-            continue
-        if not response.ok:
-            print(f"[Gemini API Error {response.status_code}]: {response.text}")
-        response.raise_for_status()
-        return response.json()
-
-    raise RuntimeError("Gemini API failed after all retries.")
 
 
 def build_prompt(uploads, latest_analytics, total_video_count):
@@ -120,8 +94,7 @@ def generate_strategy(uploads, analytics_history):
     total_video_count = len(uploads)
 
     prompt = build_prompt(uploads, latest_analytics, total_video_count)
-    result = call_gemini(prompt)
-    text = result["candidates"][0]["content"]["parts"][0]["text"]
+    text = call_gemini(prompt)
     clean_text = text.replace("```json", "").replace("```", "").strip()
     return json.loads(clean_text)
 
@@ -278,4 +251,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    safe_run(run, "Strategy Agent")

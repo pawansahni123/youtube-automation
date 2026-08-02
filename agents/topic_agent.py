@@ -15,17 +15,18 @@ Run standalone for testing:
 """
 
 import os
+from _pipeline_utils import safe_run, call_gemini
 import json
 import time
 import datetime
 import requests
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
+from _pipeline_utils import safe_run
 
 load_dotenv()
 
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 REGION_CODE = os.getenv("REGION_CODE", "US")
 NICHE_KEYWORDS = [k.strip() for k in os.getenv("NICHE_KEYWORDS", "facts").split(",")]
 
@@ -118,9 +119,6 @@ def collect_trending_candidates(top_n=8):
 
 def ask_gemini_to_pick_best_topic(candidates):
     """Send the top trending videos to Gemini and get back one recommended topic + angle."""
-    if not GEMINI_API_KEY:
-        raise ValueError("GEMINI_API_KEY missing. Set it in your .env file.")
-
     titles_block = "\n".join(
         f"- \"{c['title']}\" (channel: {c['channel']}, velocity: {c['velocity_score']} views/hr)"
         for c in candidates
@@ -146,33 +144,7 @@ Respond ONLY in valid JSON, no markdown, no preamble, in this exact shape:
   "reasoning": "..."
 }}"""
 
-    model_name = "gemini-flash-latest"  # auto-updating alias, avoids breaking when Google retires old models
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent"
-
-    max_retries = 4
-    wait_seconds = 15
-
-    for attempt in range(1, max_retries + 1):
-        response = requests.post(
-            url,
-            params={"key": GEMINI_API_KEY},
-            json={"contents": [{"parts": [{"text": prompt}]}]},
-            timeout=30,
-        )
-        if response.status_code == 429 and attempt < max_retries:
-            print(f"[Gemini Agent] Rate limited (429). Waiting {wait_seconds}s before retry "
-                  f"({attempt}/{max_retries})...")
-            time.sleep(wait_seconds)
-            wait_seconds *= 2  # exponential backoff
-            continue
-        if not response.ok:
-            print(f"[Gemini API Error {response.status_code}]: {response.text}")
-        response.raise_for_status()
-        break
-
-    data = response.json()
-
-    text = data["candidates"][0]["content"]["parts"][0]["text"]
+    text = call_gemini(prompt)
     clean_text = text.replace("```json", "").replace("```", "").strip()
     return json.loads(clean_text)
 
@@ -218,4 +190,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    safe_run(run, "Topic Agent")

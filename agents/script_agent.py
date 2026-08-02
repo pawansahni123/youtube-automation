@@ -2,18 +2,19 @@
 Script Agent
 ------------
 Purpose: Take the research notes (database/research.json, latest entry) and write
-full, word-for-word, ready-to-narrate video scripts. By default writes BOTH a
-Short and a Long-form version, but accepts an optional command-line arg to
-produce just one:
-    python agents/script_agent.py         -> both (default)
-    python agents/script_agent.py short    -> only the Short
-    python agents/script_agent.py long     -> only the Long-form
+two full, word-for-word, ready-to-narrate video scripts:
+  1. A Short (under 60 seconds, ~140-160 words)
+  2. A Long-form video (8-10 minutes, ~1200-1500 words)
 
 Both scripts are broken into labeled sections (Hook, Body beats, CTA) so the
 Voice Agent and Editor Agent can later sync narration with visuals/timing.
+
+Run standalone for testing:
+    python agents/script_agent.py
 """
 
 import os
+from _pipeline_utils import safe_run, call_gemini
 import sys
 import json
 import time
@@ -23,8 +24,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL_NAME = "gemini-flash-latest"  # auto-updating alias
 
 RESEARCH_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "research.json")
 SCRIPTS_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "scripts.json")
@@ -44,34 +43,8 @@ def load_latest_research():
     if not history:
         raise ValueError("research.json is empty. Run research_agent.py first.")
 
-    return history[-1]
+    return history[-1]  # most recent run (has "topic" + "research" keys)
 
-
-def call_gemini(prompt, max_retries=4):
-    """Call Gemini with retry-on-429 backoff."""
-    if not GEMINI_API_KEY:
-        raise ValueError("GEMINI_API_KEY missing. Set it in your .env file.")
-
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent"
-    body = {"contents": [{"parts": [{"text": prompt}]}]}
-
-    wait_seconds = 15
-    for attempt in range(1, max_retries + 1):
-        response = requests.post(url, params={"key": GEMINI_API_KEY}, json=body, timeout=60)
-
-        if response.status_code == 429 and attempt < max_retries:
-            print(f"[Script Agent] Rate limited (429). Waiting {wait_seconds}s "
-                  f"before retry ({attempt}/{max_retries})...")
-            time.sleep(wait_seconds)
-            wait_seconds *= 2
-            continue
-
-        if not response.ok:
-            print(f"[Gemini API Error {response.status_code}]: {response.text}")
-        response.raise_for_status()
-        return response.json()
-
-    raise RuntimeError("Gemini API failed after all retries.")
 
 
 def build_prompt(topic_info, research, script_type):
@@ -122,8 +95,7 @@ Use as many section objects as the structure needs (Hook, then one section per f
 
 def generate_script(topic_info, research, script_type):
     prompt = build_prompt(topic_info, research, script_type)
-    result = call_gemini(prompt)
-    text = result["candidates"][0]["content"]["parts"][0]["text"]
+    text = call_gemini(prompt)
     clean_text = text.replace("```json", "").replace("```", "").strip()
     return json.loads(clean_text)
 
@@ -162,6 +134,7 @@ def save_result(topic_info, research, short_script, long_script):
     with open(SCRIPTS_DB_PATH, "w") as f:
         json.dump(history, f, indent=2)
 
+    # Also save human-readable .txt versions for quick review (only for formats we made)
     if short_script:
         with open(os.path.join(ASSETS_DIR, "latest_script_short.txt"), "w", encoding="utf-8") as f:
             f.write(script_to_plain_text(short_script))
@@ -173,6 +146,10 @@ def save_result(topic_info, research, short_script, long_script):
 
 
 def run():
+    # Optional command-line arg controls which format(s) to produce:
+    #   python agents/script_agent.py         -> both (default, backward compatible)
+    #   python agents/script_agent.py short    -> only the Short
+    #   python agents/script_agent.py long     -> only the Long-form
     format_mode = sys.argv[1].lower() if len(sys.argv) > 1 else "both"
     if format_mode not in ("both", "short", "long"):
         print(f"[Script Agent] Unknown format arg '{format_mode}', defaulting to 'both'.")
@@ -204,4 +181,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    safe_run(run, "Script Agent")

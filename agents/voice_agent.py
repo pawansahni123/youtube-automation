@@ -2,8 +2,7 @@
 Voice Agent
 -----------
 Purpose: Take the latest script (database/scripts.json) and convert the narration
-into an actual voiceover audio file (.mp3). Automatically skips whichever format
-(short/long) wasn't generated in the latest scripts.json record.
+into an actual voiceover audio file (.mp3) for both the Short and Long-form scripts.
 
 Uses edge-tts (Microsoft Edge's neural text-to-speech) by default -- completely
 free, no API key, no billing, and noticeably more natural-sounding than gTTS.
@@ -16,6 +15,7 @@ Run standalone for testing:
 """
 
 import os
+from _pipeline_utils import safe_run
 import json
 import time
 import asyncio
@@ -25,9 +25,10 @@ import edge_tts
 
 load_dotenv()
 
-ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
-ELEVENLABS_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "21m00Tcm4TlvDq8ikWAM")
+ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")  # optional upgrade
+ELEVENLABS_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "21m00Tcm4TlvDq8ikWAM")  # default: "Rachel"
 
+# Natural-sounding US English neural voice. Browse more with: edge-tts --list-voices
 EDGE_TTS_VOICE = os.getenv("EDGE_TTS_VOICE", "en-US-GuyNeural")
 
 SCRIPTS_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "scripts.json")
@@ -44,7 +45,7 @@ def load_latest_scripts():
     if not history:
         raise ValueError("scripts.json is empty. Run script_agent.py first.")
 
-    return history[-1]
+    return history[-1]  # most recent run
 
 
 def script_to_narration_text(script):
@@ -129,4 +130,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    safe_run(run, "Voice Agent")

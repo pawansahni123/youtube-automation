@@ -14,6 +14,7 @@ Run standalone for testing:
 """
 
 import os
+from _pipeline_utils import safe_run, call_gemini
 import re
 import json
 import time
@@ -24,8 +25,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL_NAME = "gemini-flash-latest"
 
 SCRIPTS_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "scripts.json")
 MEDIA_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "media.json")
@@ -45,28 +44,6 @@ def load_latest_scripts():
     return history[-1]
 
 
-def call_gemini(prompt, max_retries=4):
-    if not GEMINI_API_KEY:
-        raise ValueError("GEMINI_API_KEY missing. Set it in your .env file.")
-
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent"
-    body = {"contents": [{"parts": [{"text": prompt}]}]}
-
-    wait_seconds = 15
-    for attempt in range(1, max_retries + 1):
-        response = requests.post(url, params={"key": GEMINI_API_KEY}, json=body, timeout=60)
-        if response.status_code == 429 and attempt < max_retries:
-            print(f"[Media Agent] Rate limited. Waiting {wait_seconds}s...")
-            time.sleep(wait_seconds)
-            wait_seconds *= 2
-            continue
-        if not response.ok:
-            print(f"[Gemini API Error {response.status_code}]: {response.text}")
-        response.raise_for_status()
-        return response.json()
-
-    raise RuntimeError("Gemini API failed after all retries.")
-
 
 def get_anchor_keywords(topic_info):
     """Ask Gemini for 2-3 concrete, filmable subject keywords (e.g. 'bobcat', 'kitten')
@@ -82,8 +59,7 @@ used as stock-footage search keywords, so they must be visual and literal.
 Respond ONLY with a JSON array of strings, no markdown, e.g. ["bobcat", "kitten", "veterinarian"]"""
 
     try:
-        result = call_gemini(prompt)
-        text = result["candidates"][0]["content"]["parts"][0]["text"]
+        text = call_gemini(prompt)
         clean_text = text.replace("```json", "").replace("```", "").strip()
         keywords = json.loads(clean_text)
         if isinstance(keywords, list) and keywords:
@@ -311,4 +287,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    safe_run(run, "Media Agent")

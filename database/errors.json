@@ -1,0 +1,8 @@
+[
+  {
+    "timestamp": "2026-07-31T10:45:35.971502+00:00",
+    "agent": "Topic Agent",
+    "error_type": "UnicodeEncodeError",
+    "error_message": "'charmap' codec can't encode character '\\U0001f631' in position 61: character maps to <undefined>"
+  }
+]
