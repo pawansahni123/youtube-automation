@@ -29,6 +29,14 @@ import time
 import datetime
 import traceback
 import requests
+from dotenv import load_dotenv
+
+# Load .env ourselves, right here, at import time -- this file is imported by
+# each agent BEFORE that agent calls load_dotenv() in its own code, so if we
+# don't load it here too, GEMINI_API_KEYS etc. below would be computed before
+# any .env values exist in the environment. (load_dotenv() is safe to call
+# more than once.)
+load_dotenv()
 
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "..")
 ERRORS_DB_PATH = os.path.join(PROJECT_ROOT, "database", "errors.json")
