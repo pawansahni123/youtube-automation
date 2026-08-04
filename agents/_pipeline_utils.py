@@ -56,6 +56,9 @@ GEMINI_API_KEYS = [
 ]
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+# "openrouter/free" is OpenRouter's own auto-router -- it picks whichever free
+# model is currently available instead of us hardcoding one specific model ID
+# that can get retired/paywalled without notice (this rotates often).
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "openrouter/free")
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
@@ -107,8 +110,18 @@ def _call_gemini(prompt, max_retries=4):
                 last_error = RuntimeError(f"Gemini key #{key_index} HTTP {response.status_code}: {response.text}")
                 break
 
-            data = response.json()
-            return data["candidates"][0]["content"]["parts"][0]["text"]
+            try:
+                data = response.json()
+                text = data["candidates"][0]["content"]["parts"][0]["text"]
+            except (KeyError, IndexError, ValueError) as e:
+                last_error = RuntimeError(f"Gemini key #{key_index} returned an unparseable response: {e}")
+                break
+
+            if not text or not text.strip():
+                last_error = RuntimeError(f"Gemini key #{key_index} returned an empty response.")
+                break
+
+            return text
 
     raise last_error or RuntimeError("All configured Gemini API keys failed.")
 
@@ -139,8 +152,16 @@ def _call_openrouter(prompt, max_retries=4):
         if not response.ok:
             raise RuntimeError(f"OpenRouter HTTP {response.status_code}: {response.text}")
 
-        data = response.json()
-        return data["choices"][0]["message"]["content"]
+        try:
+            data = response.json()
+            text = data["choices"][0]["message"]["content"]
+        except (KeyError, IndexError, ValueError) as e:
+            raise RuntimeError(f"OpenRouter returned an unparseable response: {e}")
+
+        if not text or not text.strip():
+            raise RuntimeError("OpenRouter returned an empty response (model likely overloaded/refused).")
+
+        return text
 
     raise RuntimeError("OpenRouter failed after all retries.")
 
@@ -179,8 +200,16 @@ def _call_claude(prompt, max_retries=4):
         if not response.ok:
             raise RuntimeError(f"Claude HTTP {response.status_code}: {response.text}")
 
-        data = response.json()
-        return data["content"][0]["text"]
+        try:
+            data = response.json()
+            text = data["content"][0]["text"]
+        except (KeyError, IndexError, ValueError) as e:
+            raise RuntimeError(f"Claude returned an unparseable response: {e}")
+
+        if not text or not text.strip():
+            raise RuntimeError("Claude returned an empty response.")
+
+        return text
 
     raise RuntimeError("Claude failed after all retries.")
 
