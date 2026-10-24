@@ -24,6 +24,14 @@ analysis is available. Cloud execution changes only after deployment to GitHub.
 
 The original topic-agent setup notes below remain useful for API-key setup.
 
+### Gemini-only operation
+
+All AI calls use the existing primary `GEMINI_API_KEY`. There is no OpenRouter,
+Claude, alternate-key or other-provider fallback. Gemini quota exhaustion or
+persistent failures stop the run. Technical FFmpeg QA, Edge TTS and Pexels
+continue as before. Use a Google project configured for the free tier: choosing
+Gemini in this code does not change the project's Google billing settings.
+
 ## अभी क्या तैयार है
 `agents/topic_agent.py` — YouTube पर real trending videos ढूंढता है, हर video का
 `velocity_score` (views ÷ hours since published) निकालता है, और Gemini से पूछता है

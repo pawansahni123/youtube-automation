@@ -1,0 +1,49 @@
+name: Verify Analytics connection
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Google API dependencies
+        run: pip install google-api-python-client==2.126.0 google-auth==2.29.0 google-auth-httplib2
+      - name: Verify saved channel and Analytics access
+        env:
+          ANALYTICS_TOKEN_B64: ${{ secrets.TOKEN_ANALYTICS_PICKLE_B64 }}
+        run: |
+          python - <<'PY'
+          import base64
+          import datetime as dt
+          import os
+          import pickle
+          from google.auth.transport.requests import Request
+          from googleapiclient.discovery import build
+
+          expected_channel = 'UCuTo_47D9JNduAByXvR4utg'
+          try:
+              credential = pickle.loads(base64.b64decode(os.environ['ANALYTICS_TOKEN_B64']))
+              if not credential.valid:
+                  credential.refresh(Request())
+              youtube = build('youtube', 'v3', credentials=credential, cache_discovery=False)
+              channels = youtube.channels().list(part='id', mine=True).execute()
+              if expected_channel not in {item['id'] for item in channels.get('items', [])}:
+                  raise ValueError('Authorized channel does not match this automation.')
+              analytics = build('youtubeAnalytics', 'v2', credentials=credential, cache_discovery=False)
+              day = (dt.date.today() - dt.timedelta(days=3)).isoformat()
+              analytics.reports().query(ids='channel==' + expected_channel,
+                  startDate=day, endDate=day, metrics='views').execute()
+          except Exception as error:
+              print('Analytics connection verification failed: ' + type(error).__name__)
+              raise SystemExit(1)
+          print('Saved credential verified for the expected channel and read-only Analytics API.')
+          print('No private metrics or credentials were written to workflow logs or artifacts.')
+          PY
