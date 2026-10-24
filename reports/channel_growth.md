@@ -1,6 +1,6 @@
 # WildFactsDailyTV growth report
 
-Snapshot: 2026-10-24T17:24:12.004965+00:00. Source: YouTube Data API v3 (public data).
+Snapshot: 2026-10-24T18:22:20.332606+00:00. Source: YouTube Data API v3 (public data).
 
 Subscribers: 40; public videos: 245; total channel views: 25,817.
 
@@ -12,8 +12,8 @@ The #Shorts label below is a heuristic, not an authoritative YouTube format clas
 
 | Title label | Videos | Total video views | Median views/video |
 |---|---:|---:|---:|
-| Contains #Shorts | 174 | 23,308 | 35.5 |
-| Other titles | 71 | 2,713 | 5 |
+| Contains #Shorts | 174 | 23,352 | 35.5 |
+| Other titles | 71 | 2,725 | 5 |
 
 ## Top videos by lifetime views
 

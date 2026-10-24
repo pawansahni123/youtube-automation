@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-24T17:24:12.004965+00:00",
+  "timestamp": "2026-10-24T18:22:20.332606+00:00",
   "source": "YouTube Data API v3 (public data)",
   "channel": {
     "id": "UCuTo_47D9JNduAByXvR4utg",
@@ -18,7 +18,7 @@
         "publishedAt": "2026-10-24T09:50:20Z"
       },
       "statistics": {
-        "viewCount": "111",
+        "viewCount": "146",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -50,7 +50,7 @@
         "publishedAt": "2026-10-24T07:59:34Z"
       },
       "statistics": {
-        "viewCount": "60",
+        "viewCount": "61",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -82,7 +82,7 @@
         "publishedAt": "2026-10-23T19:23:18Z"
       },
       "statistics": {
-        "viewCount": "11",
+        "viewCount": "16",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -178,7 +178,7 @@
         "publishedAt": "2026-10-21T10:34:08Z"
       },
       "statistics": {
-        "viewCount": "72",
+        "viewCount": "73",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -290,7 +290,7 @@
         "publishedAt": "2026-10-19T20:25:49Z"
       },
       "statistics": {
-        "viewCount": "174",
+        "viewCount": "183",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -370,7 +370,7 @@
         "publishedAt": "2026-10-18T17:46:04Z"
       },
       "statistics": {
-        "viewCount": "31",
+        "viewCount": "34",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2978,7 +2978,7 @@
         "publishedAt": "2026-08-17T15:25:54Z"
       },
       "statistics": {
-        "viewCount": "65",
+        "viewCount": "67",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
