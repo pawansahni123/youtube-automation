@@ -6,15 +6,16 @@ and gather well-organized research: key facts, a strong hook, supporting points,
 and a suggested narrative structure -- everything the Script Agent will need to
 write the actual video script.
 
-Uses Gemini with Google Search grounding (when available) so facts are checked
-against real, current web sources instead of relying purely on the model's memory.
+Produces draft research using the configured language model. The shared caller
+does not currently enable web-search grounding. Verify claims against sources
+before publication; generated notes are not evidence of factual verification.
 
 Run standalone for testing:
     python agents/research_agent.py
 """
 
 import os
-from _pipeline_utils import safe_run, call_gemini
+from _pipeline_utils import safe_run, call_json
 import json
 import time
 import datetime
@@ -67,9 +68,7 @@ Respond ONLY in valid JSON, no markdown, no preamble, in this exact shape:
 
 Include at least 5 key_facts. Keep facts accurate -- do not invent statistics or studies."""
 
-    text = call_gemini(prompt)
-    clean_text = text.replace("```json", "").replace("```", "").strip()
-    return json.loads(clean_text)
+    return call_json(prompt)
 
 
 def save_result(topic_info, research):

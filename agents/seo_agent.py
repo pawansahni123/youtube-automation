@@ -15,7 +15,7 @@ Run standalone for testing:
 """
 
 import os
-from _pipeline_utils import safe_run, call_gemini
+from _pipeline_utils import safe_run, call_json
 import json
 import time
 import datetime
@@ -43,7 +43,7 @@ def load_latest(path):
 
 
 def build_prompt(script_record, research_record):
-    short_script = script_record["short_script"]
+    short_script = script_record.get("short_script") or script_record.get("long_script")
     topic_info = script_record["topic"]
     research = research_record.get("research", {})
 
@@ -76,9 +76,7 @@ Respond ONLY in valid JSON, no markdown, no preamble, in this exact shape:
 
 def generate_seo(script_record, research_record):
     prompt = build_prompt(script_record, research_record)
-    text = call_gemini(prompt)
-    clean_text = text.replace("```json", "").replace("```", "").strip()
-    return json.loads(clean_text)
+    return call_json(prompt)
 
 
 def seo_to_plain_text(seo):
@@ -99,7 +97,7 @@ def seo_to_plain_text(seo):
     return "\n".join(lines)
 
 
-def save_result(topic_info, seo):
+def save_result(topic_info, seo, script_timestamp):
     os.makedirs(os.path.dirname(SEO_DB_PATH), exist_ok=True)
     os.makedirs(SEO_DIR, exist_ok=True)
 
@@ -107,6 +105,7 @@ def save_result(topic_info, seo):
         "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "topic": topic_info,
         "seo": seo,
+        "script_timestamp": script_timestamp,
     }
 
     history = []
@@ -135,7 +134,7 @@ def run():
     print(f"[SEO Agent] Generating SEO metadata for: {script_record['topic'].get('chosen_topic')}")
     seo = generate_seo(script_record, research_record)
 
-    save_result(script_record["topic"], seo)
+    save_result(script_record["topic"], seo, script_record["timestamp"])
 
     print("\n[SEO Agent] Done. SEO metadata:")
     print(seo_to_plain_text(seo))

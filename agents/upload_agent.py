@@ -25,6 +25,8 @@ import json
 import time
 import pickle
 import datetime
+from _pipeline_utils import safe_run
+from _content_guard import build_upload_plan, load_history, write_json_atomic
 from dotenv import load_dotenv
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -42,6 +44,7 @@ SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 SCRIPTS_DB_PATH = os.path.join(PROJECT_ROOT, "database", "scripts.json")
 SEO_DB_PATH = os.path.join(PROJECT_ROOT, "database", "seo.json")
 UPLOADS_DB_PATH = os.path.join(PROJECT_ROOT, "database", "uploads.json")
+QA_DB_PATH = os.path.join(PROJECT_ROOT, "database", "qa_reports.json")
 FINAL_VIDEOS_DIR = os.path.join(PROJECT_ROOT, "assets", "final_videos")
 THUMBNAIL_PATH = os.path.join(PROJECT_ROOT, "assets", "thumbnails", "latest_thumbnail.jpg")
 
@@ -145,7 +148,7 @@ def upload_video(youtube, video_path, title, description, tags, thumbnail_path=N
     return video_id, video_url
 
 
-def log_upload(video_id, video_url, video_format, title, topic_info):
+def log_upload(video_id, video_url, video_format, title, topic_info, video_sha256, script_timestamp):
     os.makedirs(os.path.dirname(UPLOADS_DB_PATH), exist_ok=True)
     record = {
         "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -155,19 +158,13 @@ def log_upload(video_id, video_url, video_format, title, topic_info):
         "title": title,
         "topic": topic_info.get("chosen_topic"),
         "unique_angle": topic_info.get("unique_angle"),
+        "video_sha256": video_sha256,
+        "script_timestamp": script_timestamp,
     }
 
-    history = []
-    if os.path.exists(UPLOADS_DB_PATH):
-        with open(UPLOADS_DB_PATH, "r") as f:
-            try:
-                history = json.load(f)
-            except json.JSONDecodeError:
-                history = []
-
+    history = load_history(UPLOADS_DB_PATH)
     history.append(record)
-    with open(UPLOADS_DB_PATH, "w") as f:
-        json.dump(history, f, indent=2)
+    write_json_atomic(UPLOADS_DB_PATH, history)
 
 
 def run():
@@ -177,35 +174,30 @@ def run():
     topic_info = script_record["topic"]
 
     seo = seo_record["seo"]
-    recommended_index = seo.get("recommended_title_index", 0)
-    title = seo["title_variants"][recommended_index]["title"]
     description = seo["description"]
     tags = seo["tags"]
+
+    history = load_history(UPLOADS_DB_PATH)
+    qa_history = load_history(QA_DB_PATH)
+    plan = build_upload_plan(PROJECT_ROOT, script_record, seo_record,
+                             qa_history[-1] if qa_history else {}, history)
 
     print("[Upload Agent] Authenticating with YouTube (browser may open on first run)...")
     youtube = get_authenticated_service()
 
-    short_path = os.path.join(FINAL_VIDEOS_DIR, "final_short.mp4")
-    long_path = os.path.join(FINAL_VIDEOS_DIR, "final_long.mp4")
-
     results = {}
-
-    if os.path.exists(short_path):
-        short_title = f"{title} #Shorts"
-        short_description = description + "\n\n#Shorts"
+    for item in plan:
+        video_format = item['format']
+        upload_description = description
+        if video_format == 'short' and '#shorts' not in description.lower():
+            upload_description += '\n\n#Shorts'
         video_id, video_url = upload_video(
-            youtube, short_path, short_title, short_description, tags,
-            thumbnail_path=THUMBNAIL_PATH,
+            youtube, item['path'], item['title'], upload_description, tags,
+            thumbnail_path=THUMBNAIL_PATH if video_format == 'long' else None,
         )
-        log_upload(video_id, video_url, "short", short_title, topic_info)
-        results["short"] = video_url
-
-    if os.path.exists(long_path):
-        video_id, video_url = upload_video(
-            youtube, long_path, title, description, tags,
-        )
-        log_upload(video_id, video_url, "long", title, topic_info)
-        results["long"] = video_url
+        log_upload(video_id, video_url, video_format, item['title'], topic_info,
+                   item['video_sha256'], script_record['timestamp'])
+        results[video_format] = video_url
 
     print("\n[Upload Agent] Done! Uploaded videos (check YouTube Studio to review/publish):")
     for kind, url in results.items():
@@ -215,4 +207,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    safe_run(run, "Upload Agent")

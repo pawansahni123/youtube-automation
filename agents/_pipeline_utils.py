@@ -25,6 +25,7 @@ Shared helpers used by every agent:
 import os
 import sys
 import json
+import re
 import time
 import datetime
 import traceback
@@ -90,6 +91,12 @@ def _call_gemini(prompt, max_retries=4):
         for attempt in range(1, max_retries + 1):
             response = requests.post(url, params={"key": api_key}, json=body, timeout=60)
 
+            if response.status_code in (500, 502, 503, 504) and attempt < max_retries:
+                print(f"[Gemini] Temporary HTTP {response.status_code}; retry {attempt}/{max_retries} in {wait_seconds}s.")
+                time.sleep(wait_seconds)
+                wait_seconds = min(wait_seconds * 2, 60)
+                continue
+
             if response.status_code == 429:
                 if _is_daily_quota_error(response.text):
                     print(f"[Gemini] Key #{key_index} has hit its DAILY quota. "
@@ -142,8 +149,8 @@ def _call_openrouter(prompt, max_retries=4):
     for attempt in range(1, max_retries + 1):
         response = requests.post(url, headers=headers, json=body, timeout=60)
 
-        if response.status_code == 429 and attempt < max_retries:
-            print(f"[OpenRouter] Rate limited. Waiting {wait_seconds}s before retry "
+        if response.status_code in (429, 500, 502, 503, 504) and attempt < max_retries:
+            print(f"[OpenRouter] Temporary HTTP {response.status_code}. Waiting {wait_seconds}s before retry "
                   f"({attempt}/{max_retries})...")
             time.sleep(wait_seconds)
             wait_seconds *= 2
@@ -159,6 +166,10 @@ def _call_openrouter(prompt, max_retries=4):
             raise RuntimeError(f"OpenRouter returned an unparseable response: {e}")
 
         if not text or not text.strip():
+            if attempt < max_retries:
+                print(f"[OpenRouter] Empty response; retry {attempt}/{max_retries}.")
+                time.sleep(min(5 * attempt, 15))
+                continue
             raise RuntimeError("OpenRouter returned an empty response (model likely overloaded/refused).")
 
         return text
@@ -218,7 +229,7 @@ def _call_claude(prompt, max_retries=4):
 # Unified entry point -- tries each configured provider in order
 # ---------------------------------------------------------------------------
 
-def call_ai(prompt, max_retries=4):
+def call_ai(prompt, max_retries=4, response_parser=None):
     """Try Gemini, then OpenRouter, then Claude -- whichever are configured
     with an API key -- returning the first successful plain-text response.
     Raises only if every configured provider fails."""
@@ -239,7 +250,16 @@ def call_ai(prompt, max_retries=4):
     last_error = None
     for name, func in providers:
         try:
-            return func(prompt, max_retries=max_retries)
+            for validation_attempt in range(2):
+                response_text = func(prompt, max_retries=max_retries)
+                if response_parser is None:
+                    return response_text
+                try:
+                    return response_parser(response_text)
+                except ValueError:
+                    if validation_attempt:
+                        raise
+                    print(f'[AI] {name} returned invalid structured output; retrying once.')
         except Exception as e:
             print(f"[AI] {name} failed ({e}). Trying next provider...")
             last_error = e
@@ -250,6 +270,31 @@ def call_ai(prompt, max_retries=4):
 # Backward-compatible alias -- existing agent code calling call_gemini(prompt)
 # still works, but now transparently falls back to OpenRouter/Claude too.
 call_gemini = call_ai
+
+
+def parse_json_response(text, expected_type=dict):
+    """Accept one JSON result, optionally fenced or preceded by explanatory prose."""
+    if not isinstance(text, str) or not text.strip():
+        raise ValueError('AI returned no structured content.')
+    cleaned = re.sub(r'<think>.*?</think>', '', text, flags=re.S).strip()
+    if cleaned.startswith('```'):
+        cleaned = re.sub(r'^```(?:json)?\s*', '', cleaned, flags=re.I)
+        cleaned = re.sub(r'\s*```\s*$', '', cleaned)
+    starts = [index for index, character in enumerate(cleaned) if character in '{[']
+    if not starts:
+        raise ValueError('AI response did not contain a JSON object or array.')
+    try:
+        result, _ = json.JSONDecoder().raw_decode(cleaned[starts[0]:])
+    except ValueError:
+        raise ValueError('AI response contained malformed JSON.') from None
+    if not isinstance(result, expected_type):
+        raise ValueError(f'AI JSON must be {expected_type.__name__}.')
+    return result
+
+
+def call_json(prompt, max_retries=4, expected_type=dict):
+    return call_ai(prompt, max_retries=max_retries,
+                   response_parser=lambda value: parse_json_response(value, expected_type))
 
 
 # ---------------------------------------------------------------------------

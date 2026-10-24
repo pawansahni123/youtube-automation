@@ -17,7 +17,7 @@ Run standalone for testing:
 """
 
 import os
-from _pipeline_utils import safe_run, call_gemini
+from _pipeline_utils import safe_run, call_json
 import re
 import json
 import time
@@ -94,9 +94,7 @@ def generate_strategy(uploads, analytics_history):
     total_video_count = len(uploads)
 
     prompt = build_prompt(uploads, latest_analytics, total_video_count)
-    text = call_gemini(prompt)
-    clean_text = text.replace("```json", "").replace("```", "").strip()
-    return json.loads(clean_text)
+    return call_json(prompt)
 
 
 def strategy_to_plain_text(strategy, total_video_count):

@@ -14,7 +14,7 @@ Run standalone for testing:
 """
 
 import os
-from _pipeline_utils import safe_run, call_gemini
+from _pipeline_utils import safe_run, call_json
 import re
 import json
 import time
@@ -59,9 +59,7 @@ used as stock-footage search keywords, so they must be visual and literal.
 Respond ONLY with a JSON array of strings, no markdown, e.g. ["bobcat", "kitten", "veterinarian"]"""
 
     try:
-        text = call_gemini(prompt)
-        clean_text = text.replace("```json", "").replace("```", "").strip()
-        keywords = json.loads(clean_text)
+        keywords = call_json(prompt, expected_type=list)
         if isinstance(keywords, list) and keywords:
             return [str(k) for k in keywords[:3]]
     except Exception as e:

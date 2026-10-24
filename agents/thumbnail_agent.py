@@ -151,8 +151,9 @@ def run():
     script_record = load_latest(SCRIPTS_DB_PATH)
     media_record = load_latest(MEDIA_DB_PATH)
 
-    title = script_record["short_script"]["title"]
-    hook_media = next((m for m in media_record["short_media"] if m["section"] == 1), None)
+    target_format = 'long' if script_record.get('long_script') else 'short'
+    title = script_record[target_format + '_script']["title"]
+    hook_media = next((m for m in media_record.get(target_format + '_media', []) if m["section"] == 1), None)
 
     if hook_media is None:
         raise ValueError("No Hook section media found in media.json. Run media_agent.py first.")
@@ -177,4 +178,4 @@ def run():
 
 
 if __name__ == "__main__":
-    safe_run(run, "Topic Agent")
+    safe_run(run, "Thumbnail Agent")

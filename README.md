@@ -1,5 +1,29 @@
 # YouTube Automation System (Phase 1: Topic Agent)
 
+## Current setup work — 24 October 2026
+
+See [the measured channel growth report](reports/channel_growth.md) for the
+public baseline and next production experiments. Owner notes, budgets and
+income targets are stored locally and excluded from this public repository.
+
+The full pipeline now includes topic, research, script, voice, media, editing,
+QA, thumbnail, SEO and upload. Both scheduled formats require fresh, matching
+SEO/QA records and reject duplicate video files or titles before upload.
+Technical QA does not replace factual or editorial review.
+
+```powershell
+python -m unittest discover -s tests -v
+python agents/growth_agent.py --refresh
+```
+
+The growth report uses the existing YouTube Data API key without an AI call.
+The optional `--include-income` flag adds local `config/business_goals.json`
+to an ignored private report at `reports/growth_report.md`.
+Private Analytics needs its login renewed before retention and watch-time
+analysis is available. Cloud execution changes only after deployment to GitHub.
+
+The original topic-agent setup notes below remain useful for API-key setup.
+
 ## अभी क्या तैयार है
 `agents/topic_agent.py` — YouTube पर real trending videos ढूंढता है, हर video का
 `velocity_score` (views ÷ hours since published) निकालता है, और Gemini से पूछता है

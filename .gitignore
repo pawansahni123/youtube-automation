@@ -26,3 +26,11 @@ youtube-automation/
 # Python cache
 __pycache__/
 *.pyc
+
+# Local owner notes, financial plans, and OAuth backups stay on this computer.
+AGENTS.md
+BUSINESS_PLAN.md
+config/business_goals.json
+reports/growth_report.md
+token_*.backup*.pickle
+token_*.new.pickle

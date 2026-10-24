@@ -6,6 +6,13 @@ on:
     - cron: '30 12 * * *'  # 6:00 PM IST
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-publishing
+  cancel-in-progress: false
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
@@ -14,6 +21,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -47,14 +57,34 @@ jobs:
           python agents/voice_agent.py
           python agents/media_agent.py
           python agents/editor_agent.py
+          python agents/qa_agent.py
           python agents/thumbnail_agent.py
           python agents/seo_agent.py
           python agents/upload_agent.py
 
-      - name: Save upload history back to repo
+      - name: Preserve run history for recovery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: short-run-history-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            database/uploads.json
+            database/topics.json
+            database/research.json
+            database/scripts.json
+            database/media.json
+            database/seo.json
+            database/qa_reports.json
+          retention-days: 30
+
+      - name: Save run history back to repo
+        if: always()
         run: |
           git config user.name "YouTube Automation Bot"
           git config user.email "actions@github.com"
-          git add database/uploads.json
+          for file in database/{uploads,topics,research,scripts,media,seo,qa_reports}.json; do
+            if [ -f "$file" ]; then git add -f -- "$file"; fi
+          done
           git diff --staged --quiet || git commit -m "Log new upload [skip ci]"
+          git pull --rebase origin "${{ github.ref_name }}"
           git push

@@ -198,6 +198,61 @@
     "unique_angle": "Uses familiar everyday household objects to vividly illustrate the shocking scale jump from newborn size to fully-grown giant."
   },
   {
+    "timestamp": "2026-08-08T06:37:48.428884+00:00",
+    "video_id": "_ZHYmylesAI",
+    "video_url": "https://www.youtube.com/watch?v=_ZHYmylesAI",
+    "format": "short",
+    "title": "They Almost Euthanized Her... Until Science Revealed Her Secret Superpower #Shorts",
+    "topic": "Extreme Animal Intelligence & Shocking Nature Encounters",
+    "unique_angle": "Frame a real marine biology mystery as a high-stakes crime thriller, breaking down the terrifying surgical precision Orcas use against apex predators."
+  },
+  {
+    "timestamp": "2026-08-08T06:41:24.739411+00:00",
+    "video_id": "wqnnP7tjnEo",
+    "video_url": "https://www.youtube.com/watch?v=wqnnP7tjnEo",
+    "format": "long",
+    "title": "They Almost Euthanized Her... Until Science Revealed Her Secret Superpower",
+    "topic": "Extreme Animal Intelligence & Shocking Nature Encounters",
+    "unique_angle": "Frame a real marine biology mystery as a high-stakes crime thriller, breaking down the terrifying surgical precision Orcas use against apex predators."
+  },
+  {
+    "timestamp": "2026-08-08T13:00:30.971890+00:00",
+    "video_id": "8YiSX-LeWr8",
+    "video_url": "https://www.youtube.com/watch?v=8YiSX-LeWr8",
+    "format": "short",
+    "title": "They Almost Euthanized Her... Until Science Revealed Her Secret Superpower #Shorts",
+    "topic": null,
+    "unique_angle": null,
+    "recovery_note": "Conflicting legacy metadata: title verified against public API; topic/angle not verified."
+  },
+  {
+    "timestamp": "2026-08-08T13:06:53.893245+00:00",
+    "video_id": "gWPiRPRiU6w",
+    "video_url": "https://www.youtube.com/watch?v=gWPiRPRiU6w",
+    "format": "long",
+    "title": "They Almost Euthanized Her... Until Science Revealed Her Secret Superpower",
+    "topic": "Extreme Animal Intelligence & Shocking Nature Encounters",
+    "unique_angle": "Frame a real marine biology mystery as a high-stakes crime thriller, breaking down the terrifying surgical precision Orcas use against apex predators."
+  },
+  {
+    "timestamp": "2026-08-10T08:43:52.182654+00:00",
+    "video_id": "9M64wEtWObE",
+    "video_url": "https://www.youtube.com/watch?v=9M64wEtWObE",
+    "format": "short",
+    "title": "They Almost Euthanized Her... Until Science Revealed Her Secret Superpower #Shorts",
+    "topic": "Extreme Animal Intelligence & Shocking Nature Encounters",
+    "unique_angle": "Frame a real marine biology mystery as a high-stakes crime thriller, breaking down the terrifying surgical precision Orcas use against apex predators."
+  },
+  {
+    "timestamp": "2026-08-10T08:48:04.504323+00:00",
+    "video_id": "HoLKf3QEI1M",
+    "video_url": "https://www.youtube.com/watch?v=HoLKf3QEI1M",
+    "format": "long",
+    "title": "They Almost Euthanized Her... Until Science Revealed Her Secret Superpower",
+    "topic": "Extreme Animal Intelligence & Shocking Nature Encounters",
+    "unique_angle": "Frame a real marine biology mystery as a high-stakes crime thriller, breaking down the terrifying surgical precision Orcas use against apex predators."
+  },
+  {
     "timestamp": "2026-08-10T09:35:15.786768+00:00",
     "video_id": "I3dndZLS42k",
     "video_url": "https://www.youtube.com/watch?v=I3dndZLS42k",
@@ -358,6 +413,30 @@
     "title": "How One Man Broke a Mountain With a Hammer #Shorts",
     "topic": "An ordinary individual spending decades single-handedly building a massive road through impossible terrain",
     "unique_angle": "Focus on the daily physical toll and ingenious low-tech engineering hacks used to break solid rock without heavy machinery."
+  },
+  {
+    "timestamp": "2026-08-13T15:53:55Z",
+    "timestamp_source": "public publishedAt",
+    "video_id": "RIa6aeETAJQ",
+    "video_url": "https://www.youtube.com/watch?v=RIa6aeETAJQ",
+    "format": "short",
+    "format_source": "title hashtag heuristic",
+    "title": "From Jellybean to GIANT: Earth's Most Insane Animal Transformations #Shorts",
+    "topic": null,
+    "unique_angle": null,
+    "recovered_from": "YouTube Data API public inventory 2026-10-24"
+  },
+  {
+    "timestamp": "2026-08-13T15:54:25Z",
+    "timestamp_source": "public publishedAt",
+    "video_id": "i4jj-3Tx9k4",
+    "video_url": "https://www.youtube.com/watch?v=i4jj-3Tx9k4",
+    "format": "long",
+    "format_source": "title hashtag heuristic",
+    "title": "From Jellybean to GIANT: Earth's Most Insane Animal Transformations",
+    "topic": null,
+    "unique_angle": null,
+    "recovered_from": "YouTube Data API public inventory 2026-10-24"
   },
   {
     "timestamp": "2026-08-14T13:56:36.618720+00:00",

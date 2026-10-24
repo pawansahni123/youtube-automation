@@ -18,7 +18,7 @@ Run standalone for testing:
 """
 
 import os
-from _pipeline_utils import safe_run, call_gemini
+from _pipeline_utils import safe_run, call_json
 import json
 import time
 import pickle
@@ -122,9 +122,7 @@ Respond ONLY in valid JSON, no markdown, no preamble, in this exact shape:
   "recommendations_for_next_topic": ["3-5 concrete, actionable suggestions for what niche_keywords or angle to try next"]
 }}"""
 
-    text = call_gemini(prompt)
-    clean_text = text.replace("```json", "").replace("```", "").strip()
-    return json.loads(clean_text)
+    return call_json(prompt)
 
 
 def insights_to_plain_text(insights, performance_data):

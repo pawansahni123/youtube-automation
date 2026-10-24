@@ -14,7 +14,7 @@ Run standalone for testing:
 """
 
 import os
-from _pipeline_utils import safe_run, call_gemini
+from _pipeline_utils import safe_run, call_json
 import sys
 import json
 import time
@@ -95,9 +95,7 @@ Use as many section objects as the structure needs (Hook, then one section per f
 
 def generate_script(topic_info, research, script_type):
     prompt = build_prompt(topic_info, research, script_type)
-    text = call_gemini(prompt)
-    clean_text = text.replace("```json", "").replace("```", "").strip()
-    return json.loads(clean_text)
+    return call_json(prompt)
 
 
 def script_to_plain_text(script):

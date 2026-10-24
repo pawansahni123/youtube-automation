@@ -1,5 +1,5 @@
 @echo off
-cd /d D:\Youtube_Agent\youtube-automation
+cd /d "%~dp0"
 
 echo ===== Starting SHORT-ONLY Pipeline =====
 
@@ -19,6 +19,9 @@ python agents/media_agent.py
 if errorlevel 1 goto :error
 
 python agents/editor_agent.py
+if errorlevel 1 goto :error
+
+python agents/qa_agent.py
 if errorlevel 1 goto :error
 
 python agents/thumbnail_agent.py

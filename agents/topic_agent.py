@@ -20,7 +20,8 @@ Run standalone for testing:
 """
 
 import os
-from _pipeline_utils import safe_run, call_gemini
+from _pipeline_utils import safe_run, call_json
+from _content_guard import load_history, normalize_title
 import json
 import time
 import datetime
@@ -35,6 +36,7 @@ REGION_CODE = os.getenv("REGION_CODE", "US")
 NICHE_KEYWORDS = [k.strip() for k in os.getenv("NICHE_KEYWORDS", "facts").split(",")]
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "topics.json")
+UPLOADS_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "uploads.json")
 
 # How many of the most recent chosen topics to show Gemini, so it can
 # actively avoid repeating the same subject/category too often.
@@ -131,22 +133,20 @@ def collect_trending_candidates(top_n=8):
 def load_recent_chosen_topics():
     """Read the last few chosen topics so Gemini can avoid repeating the same
     subject/category too often."""
-    if not os.path.exists(DB_PATH):
-        return []
-    try:
-        with open(DB_PATH, "r") as f:
-            history = json.load(f)
-    except (json.JSONDecodeError, FileNotFoundError):
-        return []
-
+    history = load_history(DB_PATH)
     recent = history[-RECENT_TOPICS_TO_AVOID:]
-    return [
+    topics = [
         {
             "chosen_topic": r["chosen"].get("chosen_topic"),
             "matched_keyword": r["chosen"].get("matched_keyword"),
         }
         for r in recent if "chosen" in r
     ]
+    uploads = load_history(UPLOADS_DB_PATH)[-30:]
+    topics.extend({'chosen_topic': r.get('topic') or r.get('title'),
+                   'matched_keyword': 'published video', 'title': r.get('title')}
+                  for r in uploads)
+    return topics
 
 
 def ask_gemini_to_pick_best_topic(candidates):
@@ -159,7 +159,7 @@ def ask_gemini_to_pick_best_topic(candidates):
 
     recent_topics = load_recent_chosen_topics()
     recent_block = (
-        "\n".join(f"- {t['chosen_topic']} (niche: {t['matched_keyword']})" for t in recent_topics)
+        "\n".join(f"- {t['chosen_topic']} (niche: {t['matched_keyword']}; title: {t.get('title', '')})" for t in recent_topics)
         if recent_topics else "(no recent history yet)"
     )
 
@@ -195,9 +195,7 @@ Respond ONLY in valid JSON, no markdown, no preamble, in this exact shape:
   "reasoning": "..."
 }}"""
 
-    text = call_gemini(prompt)
-    clean_text = text.replace("```json", "").replace("```", "").strip()
-    return json.loads(clean_text)
+    return call_json(prompt)
 
 
 def save_result(candidates, chosen):
@@ -228,12 +226,14 @@ def run():
     candidates = collect_trending_candidates()
 
     if not candidates:
-        print("[Topic Agent] No candidates found. Try widening NICHE_KEYWORDS or hours_back.")
-        return None
+        raise ValueError('No fresh topic candidates found; stopping before old content can be reused.')
 
     print(f"[Topic Agent] Found {len(candidates)} candidates. Asking Gemini to choose the best one "
           f"(with diversity in mind)...")
     chosen = ask_gemini_to_pick_best_topic(candidates)
+    title = normalize_title(chosen.get('suggested_title', ''))
+    if not title or any(normalize_title(r.get('title', '')) == title for r in load_history(UPLOADS_DB_PATH)):
+        raise ValueError('Suggested title is empty or already published; select a fresh topic.')
 
     record = save_result(candidates, chosen)
     print("[Topic Agent] Done. Chosen topic:")

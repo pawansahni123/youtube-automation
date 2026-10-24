@@ -1,0 +1,44 @@
+name: Weekly channel growth report
+
+on:
+  schedule:
+    - cron: '30 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-publishing
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install report dependencies
+        run: pip install requests==2.31.0 python-dotenv==1.0.1
+      - name: Refresh public data and growth report
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python agents/growth_agent.py --refresh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: channel-growth-${{ github.run_id }}
+          path: reports/channel_growth.md
+      - name: Save report
+        run: |
+          git config user.name "YouTube Automation Bot"
+          git config user.email "actions@github.com"
+          git add database/channel_snapshot.json reports/channel_growth.md
+          git diff --staged --quiet || git commit -m "Update channel growth report [skip ci]"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push
