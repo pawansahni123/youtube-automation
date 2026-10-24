@@ -24,13 +24,13 @@ analysis is available. Cloud execution changes only after deployment to GitHub.
 
 The original topic-agent setup notes below remain useful for API-key setup.
 
-### Gemini-only operation
+### Existing Gemini and OpenRouter keys
 
-All AI calls use the existing primary `GEMINI_API_KEY`. There is no OpenRouter,
-Claude, alternate-key or other-provider fallback. Gemini quota exhaustion or
-persistent failures stop the run. Technical FFmpeg QA, Edge TTS and Pexels
-continue as before. Use a Google project configured for the free tier: choosing
-Gemini in this code does not change the project's Google billing settings.
+AI calls try the existing primary `GEMINI_API_KEY`, then the existing
+`OPENROUTER_API_KEY` using `openrouter/free`. No paid OpenRouter model or Claude
+fallback is enabled. If both providers fail, the run stops. Technical FFmpeg
+QA, Edge TTS and Pexels continue as before. This code does not change the
+Google project's billing settings or establish what a Gemini app subscription covers.
 
 ## अभी क्या तैयार है
 `agents/topic_agent.py` — YouTube पर real trending videos ढूंढता है, हर video का

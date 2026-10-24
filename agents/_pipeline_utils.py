@@ -1,8 +1,8 @@
-"""Gemini-only calls, JSON parsing, and pipeline errors.
+"""Gemini primary, OpenRouter free fallback, JSON parsing and pipeline errors.
 
-Only the existing primary GEMINI_API_KEY is used. Persistent failures or
-quota exhaustion stop the run. No other AI provider or alternate key is
-used. Google billing/free-tier settings remain controlled in Google Cloud.
+Use existing keys only. Gemini failures can fall back to OpenRouter's free
+router; no paid OpenRouter model or Claude fallback is used. Google account
+billing/free-tier settings remain controlled in Google Cloud.
 """
 import datetime
 import json
@@ -19,6 +19,8 @@ PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..')
 ERRORS_DB_PATH = os.path.join(PROJECT_ROOT, 'database', 'errors.json')
 GEMINI_MODEL_NAME = 'gemini-flash-latest'
 GEMINI_API_KEYS = [os.environ['GEMINI_API_KEY']] if os.getenv('GEMINI_API_KEY') else []
+OPENROUTER_API_KEY = os.getenv('OPENROUTER_API_KEY')
+OPENROUTER_MODEL = 'openrouter/free'
 
 
 def _is_daily_quota_error(response_text):
@@ -28,7 +30,7 @@ def _is_daily_quota_error(response_text):
 
 def _call_gemini(prompt, max_retries=4):
     if not GEMINI_API_KEYS:
-        raise ValueError('GEMINI_API_KEY is missing. Only the existing Gemini key is supported.')
+        raise ValueError('GEMINI_API_KEY is missing.')
     if max_retries < 1:
         raise ValueError('max_retries must be at least 1.')
     url = f'https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL_NAME}:generateContent'
@@ -42,15 +44,15 @@ def _call_gemini(prompt, max_retries=4):
                 print(f'[Gemini] {type(error).__name__}; retry {attempt}/{max_retries} in {delay}s.')
                 time.sleep(delay)
                 continue
-            raise RuntimeError(f'Gemini connection failed after {max_retries} attempts ({type(error).__name__}). No provider fallback.') from None
+            raise RuntimeError(f'Gemini connection failed after {max_retries} attempts ({type(error).__name__}).') from None
         if response.status_code == 429 and _is_daily_quota_error(response.text):
-            raise RuntimeError('Gemini daily quota exhausted. Run stopped; no provider fallback.')
+            raise RuntimeError('Gemini daily quota exhausted.')
         if response.status_code in (429, 500, 502, 503, 504) and attempt < max_retries:
             print(f'[Gemini] Temporary HTTP {response.status_code}; retry {attempt}/{max_retries} in {delay}s.')
             time.sleep(delay)
             continue
         if not response.ok:
-            raise RuntimeError(f'Gemini HTTP {response.status_code}. Run stopped; no provider fallback.')
+            raise RuntimeError(f'Gemini HTTP {response.status_code}.')
         try:
             content = response.json()['candidates'][0]['content']['parts'][0]['text']
         except (KeyError, IndexError, TypeError, ValueError):
@@ -61,21 +63,69 @@ def _call_gemini(prompt, max_retries=4):
             print(f'[Gemini] Empty or unusable response; retry {attempt}/{max_retries}.')
             time.sleep(min(5 * attempt, 15))
             continue
-        raise RuntimeError('Gemini returned no usable text. Run stopped; no provider fallback.')
+        raise RuntimeError('Gemini returned no usable text.')
+
+
+def _call_openrouter(prompt, max_retries=4):
+    if not OPENROUTER_API_KEY:
+        raise ValueError('OPENROUTER_API_KEY is missing.')
+    if max_retries < 1:
+        raise ValueError('max_retries must be at least 1.')
+    for attempt in range(1, max_retries + 1):
+        delay = min(15 * (2 ** (attempt - 1)), 60)
+        try:
+            response = requests.post('https://openrouter.ai/api/v1/chat/completions',
+                headers={'Authorization': 'Bearer ' + OPENROUTER_API_KEY},
+                json={'model': 'openrouter/free', 'messages': [{'role': 'user', 'content': prompt}]}, timeout=60)
+        except requests.RequestException as error:
+            if attempt < max_retries:
+                time.sleep(delay)
+                continue
+            raise RuntimeError(f'OpenRouter free connection failed ({type(error).__name__}).') from None
+        if response.status_code in (429, 500, 502, 503, 504) and attempt < max_retries:
+            print(f'[OpenRouter free] HTTP {response.status_code}; retry {attempt}/{max_retries}.')
+            time.sleep(delay)
+            continue
+        if not response.ok:
+            raise RuntimeError(f'OpenRouter free HTTP {response.status_code}. No paid-model fallback.')
+        try:
+            content = response.json()['choices'][0]['message']['content']
+        except (KeyError, IndexError, TypeError, ValueError):
+            content = None
+        if isinstance(content, str) and content.strip():
+            return content
+        if attempt < max_retries:
+            time.sleep(min(5 * attempt, 15))
+            continue
+        raise RuntimeError('OpenRouter free returned no usable text. No paid-model fallback.')
 
 
 def call_ai(prompt, max_retries=4, response_parser=None):
-    """Call only Gemini; retry malformed JSON once on the same key."""
-    for validation_attempt in range(2):
-        response_text = _call_gemini(prompt, max_retries=max_retries)
-        if response_parser is None:
-            return response_text
+    """Try the existing Gemini key, then the existing OpenRouter free route."""
+    providers = []
+    if GEMINI_API_KEYS:
+        providers.append(('Gemini', _call_gemini))
+    if OPENROUTER_API_KEY:
+        providers.append(('OpenRouter free', _call_openrouter))
+    if not providers:
+        raise ValueError('Configure the existing GEMINI_API_KEY or OPENROUTER_API_KEY.')
+    last_error = None
+    for name, provider in providers:
         try:
-            return response_parser(response_text)
-        except ValueError:
-            if validation_attempt:
-                raise
-            print('[Gemini] Invalid structured output; retrying once on the same key.')
+            for validation_attempt in range(2):
+                response_text = provider(prompt, max_retries=max_retries)
+                if response_parser is None:
+                    return response_text
+                try:
+                    return response_parser(response_text)
+                except ValueError:
+                    if validation_attempt:
+                        raise
+                    print(f'[{name}] Invalid structured output; retrying once.')
+        except Exception as error:
+            last_error = error
+            print(f'[{name}] {_redact(error)}')
+    raise last_error or RuntimeError('Configured AI providers failed; no paid fallback.')
 
 
 call_gemini = call_ai
@@ -107,7 +157,7 @@ def call_json(prompt, max_retries=4, expected_type=dict):
 
 def _redact(message):
     text = str(message)
-    for key in GEMINI_API_KEYS:
+    for key in GEMINI_API_KEYS + ([OPENROUTER_API_KEY] if OPENROUTER_API_KEY else []):
         text = text.replace(key, '[REDACTED]')
     return re.sub(r'(?i)(key=)[^&\s]+', r'\1[REDACTED]', text)
 

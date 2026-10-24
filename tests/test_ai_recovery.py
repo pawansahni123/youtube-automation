@@ -19,7 +19,7 @@ class AIRecoveryTests(unittest.TestCase):
             self.assertTrue(all(call.kwargs['params']['key'] == 'existing-key' for call in post.call_args_list))
 
     def test_invalid_json_retries_only_gemini_then_stops(self):
-        with mock.patch.object(utils, '_call_gemini', return_value='not json') as gemini:
+        with mock.patch.object(utils, 'GEMINI_API_KEYS', ['existing-key']), mock.patch.object(utils, 'OPENROUTER_API_KEY', None), mock.patch.object(utils, '_call_gemini', return_value='not json') as gemini:
             with self.assertRaisesRegex(ValueError, 'JSON'):
                 utils.call_json('test')
             self.assertEqual(gemini.call_count, 2)
@@ -28,17 +28,29 @@ class AIRecoveryTests(unittest.TestCase):
         response = self.response(429, {}, text='requests per day quota exhausted')
         with mock.patch.object(utils, 'GEMINI_API_KEYS', ['existing-key', 'unused-key']), mock.patch.object(utils.requests, 'post', return_value=response) as post:
             with self.assertRaisesRegex(RuntimeError, 'daily quota exhausted'):
-                utils.call_json('test')
+                utils._call_gemini('test')
             self.assertEqual(post.call_count, 1)
             self.assertIn('generativelanguage.googleapis.com', post.call_args.args[0])
             self.assertEqual(post.call_args.kwargs['params']['key'], 'existing-key')
 
     def test_network_failures_retry_and_stop_on_gemini(self):
         with mock.patch.object(utils, 'GEMINI_API_KEYS', ['existing-key']), mock.patch.object(utils.requests, 'post', side_effect=utils.requests.Timeout()) as post, mock.patch.object(utils.time, 'sleep'):
-            with self.assertRaisesRegex(RuntimeError, 'No provider fallback'):
-                utils.call_json('test', max_retries=2)
+            with self.assertRaisesRegex(RuntimeError, 'connection failed'):
+                utils._call_gemini('test', max_retries=2)
             self.assertEqual(post.call_count, 2)
             self.assertTrue(all('generativelanguage.googleapis.com' in call.args[0] for call in post.call_args_list))
+
+    def test_gemini_failure_uses_existing_openrouter_fallback(self):
+        with mock.patch.object(utils, 'GEMINI_API_KEYS', ['existing-key']), mock.patch.object(utils, 'OPENROUTER_API_KEY', 'existing-openrouter-key'), mock.patch.object(utils, '_call_gemini', side_effect=RuntimeError('Gemini unavailable')) as gemini, mock.patch.object(utils, '_call_openrouter', return_value='{"ok":true}') as router:
+            self.assertEqual(utils.call_json('test'), {'ok': True})
+            gemini.assert_called_once()
+            router.assert_called_once()
+
+    def test_openrouter_never_selects_a_paid_model(self):
+        response = self.response(200, {'choices': [{'message': {'content': '{"ok":true}'}}]})
+        with mock.patch.object(utils, 'OPENROUTER_API_KEY', 'existing-openrouter-key'), mock.patch.object(utils, 'OPENROUTER_MODEL', 'paid/model'), mock.patch.object(utils.requests, 'post', return_value=response) as post:
+            utils._call_openrouter('test')
+            self.assertEqual(post.call_args.kwargs['json']['model'], 'openrouter/free')
 
     def test_parse_fences_preamble_and_expected_array(self):
         self.assertEqual(utils.parse_json_response('```json\n{"ok":true}\n```'), {'ok': True})
