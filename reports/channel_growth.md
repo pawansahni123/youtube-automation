@@ -1,8 +1,8 @@
 # WildFactsDailyTV growth report
 
-Snapshot: 2026-10-24T18:22:20.332606+00:00. Source: YouTube Data API v3 (public data).
+Snapshot: 2026-10-26T09:16:43.641452+00:00. Source: YouTube Data API v3 (public data).
 
-Subscribers: 40; public videos: 245; total channel views: 25,817.
+Subscribers: 43; public videos: 251; total channel views: 26,199.
 
 These are lifetime public counts. They do not establish monthly revenue, audience country, retention, CTR, eligible watch hours, Shorts engaged views, or YPP approval.
 
@@ -12,8 +12,8 @@ The #Shorts label below is a heuristic, not an authoritative YouTube format clas
 
 | Title label | Videos | Total video views | Median views/video |
 |---|---:|---:|---:|
-| Contains #Shorts | 174 | 23,352 | 35.5 |
-| Other titles | 71 | 2,725 | 5 |
+| Contains #Shorts | 178 | 24,364 | 39.5 |
+| Other titles | 73 | 2,818 | 5 |
 
 ## Top videos by lifetime views
 
@@ -25,11 +25,11 @@ The #Shorts label below is a heuristic, not an authoritative YouTube format clas
 | [Animals With Superpowers That Sound Fake 🦎✨ #Shorts](https://www.youtube.com/watch?v=jfDoh5IFBL8) | 2026-09-18 | PT1M4S | 931 |
 | [Its Meat and Bones Are Jet Black… So Why Are Its Eggs Normal? #Shorts](https://www.youtube.com/watch?v=OpftRLXYJxk) | 2026-10-17 | PT1M | 921 |
 | [If Earth Were a Marble, the Sun Would Be a BEACH BALL 🤯 #Shorts](https://www.youtube.com/watch?v=EKRE0KF3Zqo) | 2026-09-01 | PT1M1S | 874 |
-| [The Tiny Bird That Builds a 1‑Ton Desert Mega‑Mansion #Shorts](https://www.youtube.com/watch?v=eOYBVLtWePA) | 2026-10-18 | PT58S | 865 |
+| [The Tiny Bird That Builds a 1‑Ton Desert Mega‑Mansion #Shorts](https://www.youtube.com/watch?v=eOYBVLtWePA) | 2026-10-18 | PT58S | 866 |
 | [16-Year-Old Flash Flood Hero: How a Teen Saved 45 Lives With a Raft #Shorts](https://www.youtube.com/watch?v=E5mdjC4yDT4) | 2026-08-29 | PT51S | 865 |
 | [Sun Disappears Tomorrow: 24‑Hour Countdown from a Child's View #Shorts](https://www.youtube.com/watch?v=T-tvUfHDyK8) | 2026-08-28 | PT52S | 805 |
 | [Earth vs Pluto: Size Comparisons Kids Can Actually Picture](https://www.youtube.com/watch?v=P9nnwgzspS8) | 2026-09-15 | PT7M1S | 724 |
-| [Why the World's Blackest Chicken Can Never Lay Black Eggs #Shorts](https://www.youtube.com/watch?v=TbUzqxwPWZk) | 2026-10-17 | PT59S | 626 |
+| [Why the World's Blackest Chicken Can Never Lay Black Eggs #Shorts](https://www.youtube.com/watch?v=TbUzqxwPWZk) | 2026-10-17 | PT59S | 627 |
 | [Why a Tiger’s Lick Can Strip Your Skin Off – The Micro‑Anatomy of a Predator’s Tongue #Shorts](https://www.youtube.com/watch?v=6TZXk4fdoSc) | 2026-09-12 | PT1M6S | 580 |
 | [3 Bird Nests That Look Completely Fake #Shorts](https://www.youtube.com/watch?v=b31ygxGhTi0) | 2026-10-19 | PT1M5S | 524 |
 | [Why Astronauts Grow 2 Inches Taller in Space! 🚀 #Shorts #Shorts](https://www.youtube.com/watch?v=-Q29SJlAy04) | 2026-09-05 | PT49S | 498 |
