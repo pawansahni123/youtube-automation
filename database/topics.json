@@ -83,5 +83,90 @@
       "matched_keyword": "fun science facts",
       "reasoning": "The 'fun science facts' keyword has the lowest recent coverage (only one Einstein quiz entry), ensuring the channel rotates meaningfully across all four niche keywords. The trending data shows Shorts in the related 'amazing animal facts' niche easily surpass 5k views/hr, proving strong velocity demand for quick science bites. This topic avoids recent duplicates (no quizzes, no space/kids focus, no animal or story formats) while tapping into the same high-velocity Shorts format that drives rapid views. It keeps the channel fresh, broadens audience appeal, and aligns with the strategic need to cycle across all pillars rather than chase a single top-velocity category."
     }
+  },
+  {
+    "timestamp": "2026-10-26T12:00:09.375813+00:00",
+    "candidates_considered": [
+      {
+        "title": "The 3 Most Unbelievable Dangerous Places on Earth!\ud83d\ude44#city #facts #new #shorts #place #ytshorts",
+        "channel": "Unique Fact Official",
+        "video_id": "IQNLS4q2ZXQ",
+        "views": 2372075,
+        "hours_since_published": 10.9,
+        "velocity_score": 217197.22,
+        "matched_keyword": "amazing animal facts"
+      },
+      {
+        "title": "\ud83d\udc3e Animal Transformations | Cute to Wild | Amazing Animal Evolution",
+        "channel": "Wild Transform",
+        "video_id": "fxP9M8B4GOI",
+        "views": 134937,
+        "hours_since_published": 9.9,
+        "velocity_score": 13599.22,
+        "matched_keyword": "amazing animal facts"
+      },
+      {
+        "title": "Real-Life Superpowers \ud83d\ude2e",
+        "channel": "The Fact",
+        "video_id": "fQ3iQ9qyUBQ",
+        "views": 277817,
+        "hours_since_published": 20.8,
+        "velocity_score": 13350.94,
+        "matched_keyword": "amazing animal facts"
+      },
+      {
+        "title": "What Your Sleeping Position Might Say About You 7 Fun Signs",
+        "channel": "Better Years",
+        "video_id": "GRPLcRx-MlY",
+        "views": 162698,
+        "hours_since_published": 14.9,
+        "velocity_score": 10905.64,
+        "matched_keyword": "fun science facts"
+      },
+      {
+        "title": "\ud83d\udc3e Animal Transformations | Cute to Wild | Amazing Animal Evolution",
+        "channel": "Wild Transform",
+        "video_id": "KHNHNL62nm8",
+        "views": 111170,
+        "hours_since_published": 12.9,
+        "velocity_score": 8604.55,
+        "matched_keyword": "amazing animal facts"
+      },
+      {
+        "title": "Before & After Animal Transformation\ud83d\udca5#animaltransformations #animals",
+        "channel": "Wild Transform",
+        "video_id": "MV3m24Qgb5M",
+        "views": 244961,
+        "hours_since_published": 35.9,
+        "velocity_score": 6819.28,
+        "matched_keyword": "amazing animal facts"
+      },
+      {
+        "title": "\ud83e\udd23 Barbirusa Funny Facts In Tamil\ud83d\ude02| #tamil #facts #shorts #shortvideo #tamilshorts",
+        "channel": "@Think With Star",
+        "video_id": "nMJhXQ91Ivk",
+        "views": 136468,
+        "hours_since_published": 25.2,
+        "velocity_score": 5419.48,
+        "matched_keyword": "amazing animal facts"
+      },
+      {
+        "title": "Amazing Big Cats! \ud83d\udc05\ud83d\udc06 | Tiger & Leopard Close-Up Moments #Shorts",
+        "channel": "Fake Dimension2.0",
+        "video_id": "vpjiqntmiMw",
+        "views": 23777,
+        "hours_since_published": 4.4,
+        "velocity_score": 5358.98,
+        "matched_keyword": "amazing animal facts"
+      }
+    ],
+    "chosen": {
+      "chosen_topic": "Fun science facts about human psychology and behavior, specifically sleep positions and their implications",
+      "suggested_title": "Your Sleep Position Reveals This About Your Personality! \ud83e\udde0\u2728",
+      "unique_angle": "Exploring the psychological and scientific links between sleep postures and personality traits, backed by recent studies, to offer a fresh take beyond typical trivia.",
+      "format": "short",
+      "matched_keyword": "fun science facts",
+      "reasoning": "This topic pattern from the trending videos is chosen because it belongs to the 'fun science facts' niche, which is less saturated in the current trending list compared to 'amazing animal facts'. Our recent picks include physics/chemistry lists and quizzes, but sleep psychology is a distinct subcategory that hasn't been covered, ensuring diversity. The high velocity of the similar trending video indicates strong audience interest, and a short format aligns with the fast-paced, engaging style of our faceless channel targeting US audiences."
+    }
   }
 ]
