@@ -1,8 +1,8 @@
 # WildFactsDailyTV growth report
 
-Snapshot: 2026-10-26T09:16:43.641452+00:00. Source: YouTube Data API v3 (public data).
+Snapshot: 2026-11-02T11:35:43.042039+00:00. Source: YouTube Data API v3 (public data).
 
-Subscribers: 43; public videos: 251; total channel views: 26,199.
+Subscribers: 56; public videos: 281; total channel views: 35,633.
 
 These are lifetime public counts. They do not establish monthly revenue, audience country, retention, CTR, eligible watch hours, Shorts engaged views, or YPP approval.
 
@@ -12,28 +12,28 @@ The #Shorts label below is a heuristic, not an authoritative YouTube format clas
 
 | Title label | Videos | Total video views | Median views/video |
 |---|---:|---:|---:|
-| Contains #Shorts | 178 | 24,364 | 39.5 |
-| Other titles | 73 | 2,818 | 5 |
+| Contains #Shorts | 199 | 33,008 | 45 |
+| Other titles | 83 | 3,095 | 6 |
 
 ## Top videos by lifetime views
 
 | Video | Published | Duration | Views |
 |---|---|---|---:|
+| [The 240 MPH Peregrine Falcon: Earth's Fastest Animal! #Shorts](https://www.youtube.com/watch?v=v-JJiHOUopw) | 2026-10-29 | PT58S | 1,265 |
+| [Secretary Bird's 15‑ms Ninja Kick: 5× Body‑Weight Strike vs. Cobras / Shorts #Shorts](https://www.youtube.com/watch?v=93ZAtxzebPw) | 2026-10-30 | PT56S | 1,259 |
+| [How Mountain Goats Defy Physics on 90-Degree Cliffs #Shorts](https://www.youtube.com/watch?v=McMywRsr-j4) | 2026-10-30 | PT46S | 1,139 |
 | [The Terrifying Secret Hidden on a Tiger's Tongue (Macro Reveal) #Shorts](https://www.youtube.com/watch?v=mfUdga2qrq8) | 2026-09-12 | PT55S | 1,113 |
 | [How a 6-Year-Old's $70 Idea Saved 1,000,000 Lives #Shorts](https://www.youtube.com/watch?v=CwpoKE6pn5c) | 2026-10-16 | PT54S | 1,047 |
+| [This Slug Walks on Razor Blades Without a Scratch #Shorts](https://www.youtube.com/watch?v=8KrDxG68J48) | 2026-10-29 | PT56S | 1,020 |
+| [Sylvester Stallone’s Heartbreaking Dog Buddy Inspired Rocky: The True Story of Hollywood’s L #Shorts](https://www.youtube.com/watch?v=b1UdHnYm990) | 2026-11-01 | PT1M1S | 964 |
 | [Hero Dog Saves Owner from House Fire – True Story (Ohio 2019) #Shorts](https://www.youtube.com/watch?v=ZxrSEcVdiEY) | 2026-08-18 | PT55S | 947 |
 | [Animals With Superpowers That Sound Fake 🦎✨ #Shorts](https://www.youtube.com/watch?v=jfDoh5IFBL8) | 2026-09-18 | PT1M4S | 931 |
+| [You Won't Believe These Baby Animals' Incredible Glow-Up #Shorts](https://www.youtube.com/watch?v=9XaYbJvFPbU) | 2026-11-01 | PT58S | 929 |
 | [Its Meat and Bones Are Jet Black… So Why Are Its Eggs Normal? #Shorts](https://www.youtube.com/watch?v=OpftRLXYJxk) | 2026-10-17 | PT1M | 921 |
-| [If Earth Were a Marble, the Sun Would Be a BEACH BALL 🤯 #Shorts](https://www.youtube.com/watch?v=EKRE0KF3Zqo) | 2026-09-01 | PT1M1S | 874 |
-| [The Tiny Bird That Builds a 1‑Ton Desert Mega‑Mansion #Shorts](https://www.youtube.com/watch?v=eOYBVLtWePA) | 2026-10-18 | PT58S | 866 |
+| [If Earth Were a Marble, the Sun Would Be a BEACH BALL 🤯 #Shorts](https://www.youtube.com/watch?v=EKRE0KF3Zqo) | 2026-09-01 | PT1M1S | 875 |
+| [The Tiny Bird That Builds a 1‑Ton Desert Mega‑Mansion #Shorts](https://www.youtube.com/watch?v=eOYBVLtWePA) | 2026-10-18 | PT58S | 867 |
 | [16-Year-Old Flash Flood Hero: How a Teen Saved 45 Lives With a Raft #Shorts](https://www.youtube.com/watch?v=E5mdjC4yDT4) | 2026-08-29 | PT51S | 865 |
 | [Sun Disappears Tomorrow: 24‑Hour Countdown from a Child's View #Shorts](https://www.youtube.com/watch?v=T-tvUfHDyK8) | 2026-08-28 | PT52S | 805 |
-| [Earth vs Pluto: Size Comparisons Kids Can Actually Picture](https://www.youtube.com/watch?v=P9nnwgzspS8) | 2026-09-15 | PT7M1S | 724 |
-| [Why the World's Blackest Chicken Can Never Lay Black Eggs #Shorts](https://www.youtube.com/watch?v=TbUzqxwPWZk) | 2026-10-17 | PT59S | 627 |
-| [Why a Tiger’s Lick Can Strip Your Skin Off – The Micro‑Anatomy of a Predator’s Tongue #Shorts](https://www.youtube.com/watch?v=6TZXk4fdoSc) | 2026-09-12 | PT1M6S | 580 |
-| [3 Bird Nests That Look Completely Fake #Shorts](https://www.youtube.com/watch?v=b31ygxGhTi0) | 2026-10-19 | PT1M5S | 524 |
-| [Why Astronauts Grow 2 Inches Taller in Space! 🚀 #Shorts #Shorts](https://www.youtube.com/watch?v=-Q29SJlAy04) | 2026-09-05 | PT49S | 498 |
-| [How a Farm Boy Built a Telescope from Car Parts… and Found Pluto #Shorts](https://www.youtube.com/watch?v=CG_AnH6DZWY) | 2026-10-15 | PT55S | 495 |
 
 Repeated normalized titles within the same title label: 5 groups.
 
