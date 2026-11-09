@@ -1,16 +1,592 @@
 {
-  "timestamp": "2026-11-02T11:35:43.042039+00:00",
+  "timestamp": "2026-11-09T11:58:33.527933+00:00",
   "source": "YouTube Data API v3 (public data)",
   "channel": {
     "id": "UCuTo_47D9JNduAByXvR4utg",
     "statistics": {
-      "viewCount": "35633",
-      "subscriberCount": "56",
+      "viewCount": "37968",
+      "subscriberCount": "57",
       "hiddenSubscriberCount": false,
-      "videoCount": "281"
+      "videoCount": "318"
     }
   },
   "videos": [
+    {
+      "id": "By-q0EFTARs",
+      "snippet": {
+        "title": "How Pelican Throat Pouches Work: Nature's Underwater Net",
+        "publishedAt": "2026-11-08T19:32:02Z"
+      },
+      "statistics": {
+        "viewCount": "3",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT10M16S"
+      }
+    },
+    {
+      "id": "FIEtZu_Yo08",
+      "snippet": {
+        "title": "How Pelican Throat Pouches Work: Nature's Underwater Net #Shorts",
+        "publishedAt": "2026-11-08T19:31:02Z"
+      },
+      "statistics": {
+        "viewCount": "777",
+        "likeCount": "6",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT48S"
+      }
+    },
+    {
+      "id": "gHV3rqoludw",
+      "snippet": {
+        "title": "Gallium Melts in Your Hand \u2013 The Metal That Liquefies at Body Temperature #Shorts",
+        "publishedAt": "2026-11-08T18:09:58Z"
+      },
+      "statistics": {
+        "viewCount": "17",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT59S"
+      }
+    },
+    {
+      "id": "uAJzD2szFqQ",
+      "snippet": {
+        "title": "From Seed to Forest: 12\u2011Year\u2011Old Greened Her City with 3,000 Trees #Shorts",
+        "publishedAt": "2026-11-08T12:15:06Z"
+      },
+      "statistics": {
+        "viewCount": "6",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M3S"
+      }
+    },
+    {
+      "id": "UGbuhZNxlG4",
+      "snippet": {
+        "title": "Bamboo Rat's Secret Underground Highway: Nature's Hidden Drainage System",
+        "publishedAt": "2026-11-08T10:04:15Z"
+      },
+      "statistics": {
+        "viewCount": "0",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT7M59S"
+      }
+    },
+    {
+      "id": "CqVxIv2ZN_w",
+      "snippet": {
+        "title": "Bamboo Rat's Secret Underground Highway: Nature's Hidden Drainage System #Shorts",
+        "publishedAt": "2026-11-08T10:03:58Z"
+      },
+      "statistics": {
+        "viewCount": "5",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M"
+      }
+    },
+    {
+      "id": "hrVev55qjX0",
+      "snippet": {
+        "title": "5 Animals That Hide Better Than Chameleons \u2013 The Ultimate Camouflage Showdown",
+        "publishedAt": "2026-11-07T19:18:46Z"
+      },
+      "statistics": {
+        "viewCount": "2",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT8M49S"
+      }
+    },
+    {
+      "id": "wQkSIyE7zR8",
+      "snippet": {
+        "title": "5 Animals That Hide Better Than Chameleons \u2013 The Ultimate Camouflage Showdown #Shorts",
+        "publishedAt": "2026-11-07T19:17:49Z"
+      },
+      "statistics": {
+        "viewCount": "38",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M"
+      }
+    },
+    {
+      "id": "Vgxqd3V8IMI",
+      "snippet": {
+        "title": "The Bamboo Rat's Incredible Long-Distance Burrow Journey \ud83d\udc2d #Shorts",
+        "publishedAt": "2026-11-07T18:02:08Z"
+      },
+      "statistics": {
+        "viewCount": "159",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT58S"
+      }
+    },
+    {
+      "id": "wi3Y4Mq_b4Q",
+      "snippet": {
+        "title": "Why Ice Floats: The Counterintuitive Physics of Water #Shorts",
+        "publishedAt": "2026-11-07T11:56:16Z"
+      },
+      "statistics": {
+        "viewCount": "6",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M6S"
+      }
+    },
+    {
+      "id": "pNwdCFbna3U",
+      "snippet": {
+        "title": "Forget Chameleons: 4 Animals That Vanish in Plain Sight",
+        "publishedAt": "2026-11-07T09:35:32Z"
+      },
+      "statistics": {
+        "viewCount": "2",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT5M14S"
+      }
+    },
+    {
+      "id": "q1z7Lt8cm48",
+      "snippet": {
+        "title": "Forget Chameleons: 4 Animals That Vanish in Plain Sight #Shorts",
+        "publishedAt": "2026-11-07T09:35:20Z"
+      },
+      "statistics": {
+        "viewCount": "80",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M10S"
+      }
+    },
+    {
+      "id": "lYcUBGTEPUM",
+      "snippet": {
+        "title": "Michael J. Fox\u2019s Secret Parkinson\u2019s Battle & Tracy Pollan\u2019s Love \u2013 The Real Heartbreak",
+        "publishedAt": "2026-11-06T20:57:06Z"
+      },
+      "statistics": {
+        "viewCount": "3",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT7M18S"
+      }
+    },
+    {
+      "id": "UPynWZ9AJr8",
+      "snippet": {
+        "title": "Michael J. Fox\u2019s Secret Parkinson\u2019s Battle & Tracy Pollan\u2019s Love \u2013 The Real Heartbreak #Shorts",
+        "publishedAt": "2026-11-06T20:56:38Z"
+      },
+      "statistics": {
+        "viewCount": "32",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M"
+      }
+    },
+    {
+      "id": "kiG9C5UhOFo",
+      "snippet": {
+        "title": "Beyond Chameleons: The Real Masters of Camouflage (Cuttlefish & Octopus) #Shorts",
+        "publishedAt": "2026-11-06T19:44:14Z"
+      },
+      "statistics": {
+        "viewCount": "13",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M5S"
+      }
+    },
+    {
+      "id": "1J3_X199sTc",
+      "snippet": {
+        "title": "5 US Animals That Camouflage Better Than Chameleons #Shorts",
+        "publishedAt": "2026-11-06T13:24:29Z"
+      },
+      "statistics": {
+        "viewCount": "7",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT53S"
+      }
+    },
+    {
+      "id": "Sxg6vA7mMJ4",
+      "snippet": {
+        "title": "Bird Swallows a Snake Whole \u2013 Jaw Mechanics Explained",
+        "publishedAt": "2026-11-05T21:33:27Z"
+      },
+      "statistics": {
+        "viewCount": "137",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT6M43S"
+      }
+    },
+    {
+      "id": "znEZuxfqVlg",
+      "snippet": {
+        "title": "Bird Swallows a Snake Whole \u2013 Jaw Mechanics Explained #Shorts",
+        "publishedAt": "2026-11-05T21:32:48Z"
+      },
+      "statistics": {
+        "viewCount": "244",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M6S"
+      }
+    },
+    {
+      "id": "45sbch600Zg",
+      "snippet": {
+        "title": "The $600 Coffee Made From Animal Poop | Civet Coffee #Shorts",
+        "publishedAt": "2026-11-05T13:29:44Z"
+      },
+      "statistics": {
+        "viewCount": "28",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT52S"
+      }
+    },
+    {
+      "id": "U5D7vzsKuV0",
+      "snippet": {
+        "title": "You Won't Believe the Science Behind This Everyday Magic!",
+        "publishedAt": "2026-11-05T10:40:59Z"
+      },
+      "statistics": {
+        "viewCount": "2",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT4M44S"
+      }
+    },
+    {
+      "id": "nvTiAVMwwfs",
+      "snippet": {
+        "title": "You Won't Believe the Science Behind This Everyday Magic! #Shorts",
+        "publishedAt": "2026-11-05T10:40:30Z"
+      },
+      "statistics": {
+        "viewCount": "2",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT54S"
+      }
+    },
+    {
+      "id": "wGQLLsU-HTo",
+      "snippet": {
+        "title": "Mandrill Canines Are Longer Than a Lion\u2019s \u2013 The Shocking Evolutionary Reason",
+        "publishedAt": "2026-11-04T21:12:04Z"
+      },
+      "statistics": {
+        "viewCount": "44",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT5M14S"
+      }
+    },
+    {
+      "id": "UfE3m4A3Iz8",
+      "snippet": {
+        "title": "Mandrill Canines Are Longer Than a Lion\u2019s \u2013 The Shocking Evolutionary Reason #Shorts",
+        "publishedAt": "2026-11-04T21:11:38Z"
+      },
+      "statistics": {
+        "viewCount": "18",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT59S"
+      }
+    },
+    {
+      "id": "F3hzo1hzFC0",
+      "snippet": {
+        "title": "Einstein's 5-Second Science Riddles: Guess Before the Reveal! #Shorts",
+        "publishedAt": "2026-11-04T20:05:31Z"
+      },
+      "statistics": {
+        "viewCount": "9",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M5S"
+      }
+    },
+    {
+      "id": "kzYiEym6tTc",
+      "snippet": {
+        "title": "5 Fun Science Facts That Will Change How You See Biology! \ud83e\uddec\u2728 #Shorts",
+        "publishedAt": "2026-11-04T13:17:34Z"
+      },
+      "statistics": {
+        "viewCount": "1",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT59S"
+      }
+    },
+    {
+      "id": "vccHWisisw4",
+      "snippet": {
+        "title": "The 500\u2011Year\u2011Old Ocean Quahog: How a Clam Outlived the Roman Empire",
+        "publishedAt": "2026-11-04T10:22:16Z"
+      },
+      "statistics": {
+        "viewCount": "86",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT6M53S"
+      }
+    },
+    {
+      "id": "XNHWUCHs_JA",
+      "snippet": {
+        "title": "The 500\u2011Year\u2011Old Ocean Quahog: How a Clam Outlived the Roman Empire #Shorts",
+        "publishedAt": "2026-11-04T10:21:50Z"
+      },
+      "statistics": {
+        "viewCount": "4",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT57S"
+      }
+    },
+    {
+      "id": "lbJyEQMULwg",
+      "snippet": {
+        "title": "The Real-Life Emerald Dragon: Nature Tried to Hide This \ud83e\udd8e",
+        "publishedAt": "2026-11-03T20:59:16Z"
+      },
+      "statistics": {
+        "viewCount": "22",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT8M1S"
+      }
+    },
+    {
+      "id": "PFJky0vzQuA",
+      "snippet": {
+        "title": "The Real-Life Emerald Dragon: Nature Tried to Hide This \ud83e\udd8e #Shorts",
+        "publishedAt": "2026-11-03T20:58:59Z"
+      },
+      "statistics": {
+        "viewCount": "97",
+        "likeCount": "3",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT58S"
+      }
+    },
+    {
+      "id": "b2QN8NuBE3M",
+      "snippet": {
+        "title": "5 Mind\u2011Blowing Moons You\u2019ve Never Heard Of! \ud83d\ude80 #SpaceFacts #Shorts",
+        "publishedAt": "2026-11-03T13:07:18Z"
+      },
+      "statistics": {
+        "viewCount": "31",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M10S"
+      }
+    },
+    {
+      "id": "nZD7SQGEIqY",
+      "snippet": {
+        "title": "12\u2011Year\u2011Old Girl Builds $5 Water Filter That Saved 500 Villagers #Shorts",
+        "publishedAt": "2026-11-03T10:47:11Z"
+      },
+      "statistics": {
+        "viewCount": "151",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M7S"
+      }
+    },
+    {
+      "id": "eRTBRcdjF_w",
+      "snippet": {
+        "title": "12\u2011Year\u2011Old Girl Builds $5 Water Filter That Saved 500 Villagers",
+        "publishedAt": "2026-11-03T10:44:17Z"
+      },
+      "statistics": {
+        "viewCount": "7",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT6M1S"
+      }
+    },
+    {
+      "id": "KS_sYa6Ze4s",
+      "snippet": {
+        "title": "Orcas Eat Ice \u2013 Why These Whales Love Frozen Snacks",
+        "publishedAt": "2026-11-02T23:22:50Z"
+      },
+      "statistics": {
+        "viewCount": "37",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT7M52S"
+      }
+    },
+    {
+      "id": "3hgGmNeprvs",
+      "snippet": {
+        "title": "Orcas Eat Ice \u2013 Why These Whales Love Frozen Snacks #Shorts",
+        "publishedAt": "2026-11-02T23:22:30Z"
+      },
+      "statistics": {
+        "viewCount": "112",
+        "likeCount": "3",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT55S"
+      }
+    },
+    {
+      "id": "UHBdZG--F5U",
+      "snippet": {
+        "title": "Mind-Reading Fish & UV-Seeing Birds: 5 Bizarre Animal Senses Behind Real Technology #Shorts",
+        "publishedAt": "2026-11-02T22:08:46Z"
+      },
+      "statistics": {
+        "viewCount": "55",
+        "likeCount": "2",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M5S"
+      }
+    },
+    {
+      "id": "vnEPDu2o2Ws",
+      "snippet": {
+        "title": "How Orcas Weaponize Ice: The Physics & Biology of Sub-Zero Hunting #Shorts",
+        "publishedAt": "2026-11-02T13:54:21Z"
+      },
+      "statistics": {
+        "viewCount": "85",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT55S"
+      }
+    },
     {
       "id": "CsDkvW2VyxQ",
       "snippet": {
@@ -18,7 +594,7 @@
         "publishedAt": "2026-11-02T10:23:54Z"
       },
       "statistics": {
-        "viewCount": "7",
+        "viewCount": "40",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -34,8 +610,8 @@
         "publishedAt": "2026-11-02T10:23:53Z"
       },
       "statistics": {
-        "viewCount": "13",
-        "likeCount": "1",
+        "viewCount": "76",
+        "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "0"
       },
@@ -50,7 +626,7 @@
         "publishedAt": "2026-11-01T19:20:11Z"
       },
       "statistics": {
-        "viewCount": "10",
+        "viewCount": "24",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -66,7 +642,7 @@
         "publishedAt": "2026-11-01T19:19:36Z"
       },
       "statistics": {
-        "viewCount": "226",
+        "viewCount": "222",
         "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "1"
@@ -82,8 +658,8 @@
         "publishedAt": "2026-11-01T18:13:06Z"
       },
       "statistics": {
-        "viewCount": "71",
-        "likeCount": "1",
+        "viewCount": "90",
+        "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "0"
       },
@@ -98,7 +674,7 @@
         "publishedAt": "2026-11-01T12:07:02Z"
       },
       "statistics": {
-        "viewCount": "929",
+        "viewCount": "939",
         "likeCount": "14",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -114,7 +690,7 @@
         "publishedAt": "2026-11-01T10:17:51Z"
       },
       "statistics": {
-        "viewCount": "9",
+        "viewCount": "17",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -130,8 +706,8 @@
         "publishedAt": "2026-11-01T10:17:32Z"
       },
       "statistics": {
-        "viewCount": "964",
-        "likeCount": "27",
+        "viewCount": "1019",
+        "likeCount": "30",
         "favoriteCount": "0",
         "commentCount": "2"
       },
@@ -162,7 +738,7 @@
         "publishedAt": "2026-10-31T09:27:04Z"
       },
       "statistics": {
-        "viewCount": "2",
+        "viewCount": "3",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -178,7 +754,7 @@
         "publishedAt": "2026-10-31T09:27:01Z"
       },
       "statistics": {
-        "viewCount": "45",
+        "viewCount": "47",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -194,8 +770,8 @@
         "publishedAt": "2026-10-30T18:16:11Z"
       },
       "statistics": {
-        "viewCount": "618",
-        "likeCount": "15",
+        "viewCount": "625",
+        "likeCount": "16",
         "favoriteCount": "0",
         "commentCount": "2"
       },
@@ -210,8 +786,8 @@
         "publishedAt": "2026-10-30T11:37:10Z"
       },
       "statistics": {
-        "viewCount": "1139",
-        "likeCount": "19",
+        "viewCount": "1190",
+        "likeCount": "23",
         "favoriteCount": "0",
         "commentCount": "0"
       },
@@ -226,7 +802,7 @@
         "publishedAt": "2026-10-30T09:49:26Z"
       },
       "statistics": {
-        "viewCount": "105",
+        "viewCount": "137",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -242,7 +818,7 @@
         "publishedAt": "2026-10-30T09:48:25Z"
       },
       "statistics": {
-        "viewCount": "1259",
+        "viewCount": "1260",
         "likeCount": "13",
         "favoriteCount": "0",
         "commentCount": "2"
@@ -274,7 +850,7 @@
         "publishedAt": "2026-10-29T11:47:59Z"
       },
       "statistics": {
-        "viewCount": "1020",
+        "viewCount": "1022",
         "likeCount": "23",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -290,7 +866,7 @@
         "publishedAt": "2026-10-29T09:29:32Z"
       },
       "statistics": {
-        "viewCount": "3",
+        "viewCount": "4",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -306,7 +882,7 @@
         "publishedAt": "2026-10-29T09:29:19Z"
       },
       "statistics": {
-        "viewCount": "1265",
+        "viewCount": "1269",
         "likeCount": "44",
         "favoriteCount": "0",
         "commentCount": "1"
@@ -322,7 +898,7 @@
         "publishedAt": "2026-10-28T20:41:41Z"
       },
       "statistics": {
-        "viewCount": "63",
+        "viewCount": "65",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -338,7 +914,7 @@
         "publishedAt": "2026-10-28T20:41:05Z"
       },
       "statistics": {
-        "viewCount": "9",
+        "viewCount": "10",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -370,7 +946,7 @@
         "publishedAt": "2026-10-28T11:34:39Z"
       },
       "statistics": {
-        "viewCount": "234",
+        "viewCount": "235",
         "likeCount": "5",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -418,7 +994,7 @@
         "publishedAt": "2026-10-27T19:56:21Z"
       },
       "statistics": {
-        "viewCount": "1",
+        "viewCount": "3",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -482,7 +1058,7 @@
         "publishedAt": "2026-10-26T20:37:41Z"
       },
       "statistics": {
-        "viewCount": "16",
+        "viewCount": "17",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -498,7 +1074,7 @@
         "publishedAt": "2026-10-26T20:37:15Z"
       },
       "statistics": {
-        "viewCount": "7",
+        "viewCount": "8",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -530,7 +1106,7 @@
         "publishedAt": "2026-10-25T18:23:01Z"
       },
       "statistics": {
-        "viewCount": "79",
+        "viewCount": "82",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -546,7 +1122,7 @@
         "publishedAt": "2026-10-25T16:47:28Z"
       },
       "statistics": {
-        "viewCount": "207",
+        "viewCount": "208",
         "likeCount": "9",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -562,7 +1138,7 @@
         "publishedAt": "2026-10-25T10:09:09Z"
       },
       "statistics": {
-        "viewCount": "266",
+        "viewCount": "271",
         "likeCount": "4",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -578,7 +1154,7 @@
         "publishedAt": "2026-10-25T08:28:52Z"
       },
       "statistics": {
-        "viewCount": "4",
+        "viewCount": "6",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -594,7 +1170,7 @@
         "publishedAt": "2026-10-25T08:27:58Z"
       },
       "statistics": {
-        "viewCount": "465",
+        "viewCount": "466",
         "likeCount": "7",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -642,7 +1218,7 @@
         "publishedAt": "2026-10-24T07:59:34Z"
       },
       "statistics": {
-        "viewCount": "89",
+        "viewCount": "91",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -706,7 +1282,7 @@
         "publishedAt": "2026-10-22T10:52:35Z"
       },
       "statistics": {
-        "viewCount": "38",
+        "viewCount": "43",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -754,7 +1330,7 @@
         "publishedAt": "2026-10-21T17:35:26Z"
       },
       "statistics": {
-        "viewCount": "34",
+        "viewCount": "36",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -770,7 +1346,7 @@
         "publishedAt": "2026-10-21T10:34:08Z"
       },
       "statistics": {
-        "viewCount": "78",
+        "viewCount": "79",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -882,7 +1458,7 @@
         "publishedAt": "2026-10-19T20:25:49Z"
       },
       "statistics": {
-        "viewCount": "246",
+        "viewCount": "247",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -898,7 +1474,7 @@
         "publishedAt": "2026-10-19T20:24:52Z"
       },
       "statistics": {
-        "viewCount": "526",
+        "viewCount": "528",
         "likeCount": "5",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -930,7 +1506,7 @@
         "publishedAt": "2026-10-19T08:30:53Z"
       },
       "statistics": {
-        "viewCount": "67",
+        "viewCount": "68",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -946,7 +1522,7 @@
         "publishedAt": "2026-10-19T08:30:21Z"
       },
       "statistics": {
-        "viewCount": "107",
+        "viewCount": "110",
         "likeCount": "3",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -962,7 +1538,7 @@
         "publishedAt": "2026-10-18T17:46:04Z"
       },
       "statistics": {
-        "viewCount": "42",
+        "viewCount": "43",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -978,7 +1554,7 @@
         "publishedAt": "2026-10-18T17:44:59Z"
       },
       "statistics": {
-        "viewCount": "120",
+        "viewCount": "123",
         "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1026,7 +1602,7 @@
         "publishedAt": "2026-10-17T15:51:02Z"
       },
       "statistics": {
-        "viewCount": "394",
+        "viewCount": "410",
         "likeCount": "6",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1058,7 +1634,7 @@
         "publishedAt": "2026-10-17T07:34:51Z"
       },
       "statistics": {
-        "viewCount": "10",
+        "viewCount": "12",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1074,7 +1650,7 @@
         "publishedAt": "2026-10-17T07:34:27Z"
       },
       "statistics": {
-        "viewCount": "628",
+        "viewCount": "632",
         "likeCount": "5",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1138,7 +1714,7 @@
         "publishedAt": "2026-10-15T15:37:25Z"
       },
       "statistics": {
-        "viewCount": "103",
+        "viewCount": "108",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1170,7 +1746,7 @@
         "publishedAt": "2026-10-15T10:12:23Z"
       },
       "statistics": {
-        "viewCount": "496",
+        "viewCount": "497",
         "likeCount": "6",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1282,7 +1858,7 @@
         "publishedAt": "2026-10-11T09:38:39Z"
       },
       "statistics": {
-        "viewCount": "28",
+        "viewCount": "31",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1298,7 +1874,7 @@
         "publishedAt": "2026-10-11T09:37:56Z"
       },
       "statistics": {
-        "viewCount": "106",
+        "viewCount": "107",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1314,7 +1890,7 @@
         "publishedAt": "2026-10-10T19:11:41Z"
       },
       "statistics": {
-        "viewCount": "67",
+        "viewCount": "70",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1330,7 +1906,7 @@
         "publishedAt": "2026-10-10T19:11:17Z"
       },
       "statistics": {
-        "viewCount": "131",
+        "viewCount": "135",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1362,7 +1938,7 @@
         "publishedAt": "2026-10-10T09:18:01Z"
       },
       "statistics": {
-        "viewCount": "108",
+        "viewCount": "117",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1394,7 +1970,7 @@
         "publishedAt": "2026-10-09T18:32:02Z"
       },
       "statistics": {
-        "viewCount": "10",
+        "viewCount": "11",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1490,7 +2066,7 @@
         "publishedAt": "2026-10-07T09:29:20Z"
       },
       "statistics": {
-        "viewCount": "11",
+        "viewCount": "12",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1554,7 +2130,7 @@
         "publishedAt": "2026-10-06T18:38:03Z"
       },
       "statistics": {
-        "viewCount": "10",
+        "viewCount": "11",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1602,7 +2178,7 @@
         "publishedAt": "2026-10-04T18:30:53Z"
       },
       "statistics": {
-        "viewCount": "15",
+        "viewCount": "17",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1698,7 +2274,7 @@
         "publishedAt": "2026-10-03T18:27:34Z"
       },
       "statistics": {
-        "viewCount": "74",
+        "viewCount": "77",
         "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1730,7 +2306,7 @@
         "publishedAt": "2026-10-03T10:36:01Z"
       },
       "statistics": {
-        "viewCount": "27",
+        "viewCount": "28",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2306,7 +2882,7 @@
         "publishedAt": "2026-09-20T08:18:00Z"
       },
       "statistics": {
-        "viewCount": "438",
+        "viewCount": "439",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2610,7 +3186,7 @@
         "publishedAt": "2026-09-12T17:39:29Z"
       },
       "statistics": {
-        "viewCount": "580",
+        "viewCount": "581",
         "likeCount": "7",
         "favoriteCount": "0",
         "commentCount": "1"
@@ -2626,7 +3202,7 @@
         "publishedAt": "2026-09-12T15:49:32Z"
       },
       "statistics": {
-        "viewCount": "1113",
+        "viewCount": "1114",
         "likeCount": "10",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2642,7 +3218,7 @@
         "publishedAt": "2026-09-12T07:37:36Z"
       },
       "statistics": {
-        "viewCount": "30",
+        "viewCount": "31",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2738,7 +3314,7 @@
         "publishedAt": "2026-09-10T16:40:10Z"
       },
       "statistics": {
-        "viewCount": "33",
+        "viewCount": "34",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2882,7 +3458,7 @@
         "publishedAt": "2026-09-05T15:29:45Z"
       },
       "statistics": {
-        "viewCount": "20",
+        "viewCount": "22",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2962,7 +3538,7 @@
         "publishedAt": "2026-09-04T07:59:35Z"
       },
       "statistics": {
-        "viewCount": "126",
+        "viewCount": "128",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2978,7 +3554,7 @@
         "publishedAt": "2026-09-03T16:40:40Z"
       },
       "statistics": {
-        "viewCount": "62",
+        "viewCount": "63",
         "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3154,7 +3730,7 @@
         "publishedAt": "2026-08-29T11:56:04Z"
       },
       "statistics": {
-        "viewCount": "122",
+        "viewCount": "124",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3266,7 +3842,7 @@
         "publishedAt": "2026-08-25T13:39:05Z"
       },
       "statistics": {
-        "viewCount": "14",
+        "viewCount": "15",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3330,7 +3906,7 @@
         "publishedAt": "2026-08-23T13:20:27Z"
       },
       "statistics": {
-        "viewCount": "86",
+        "viewCount": "87",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3522,7 +4098,7 @@
         "publishedAt": "2026-08-18T13:30:14Z"
       },
       "statistics": {
-        "viewCount": "34",
+        "viewCount": "41",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3714,7 +4290,7 @@
         "publishedAt": "2026-08-15T05:53:22Z"
       },
       "statistics": {
-        "viewCount": "2",
+        "viewCount": "4",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3890,7 +4466,7 @@
         "publishedAt": "2026-08-13T07:09:32Z"
       },
       "statistics": {
-        "viewCount": "5",
+        "viewCount": "6",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -4050,7 +4626,7 @@
         "publishedAt": "2026-08-11T08:17:49Z"
       },
       "statistics": {
-        "viewCount": "1",
+        "viewCount": "2",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -4098,7 +4674,7 @@
         "publishedAt": "2026-08-10T10:36:04Z"
       },
       "statistics": {
-        "viewCount": "4",
+        "viewCount": "5",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -4498,7 +5074,7 @@
         "publishedAt": "2026-07-30T10:19:10Z"
       },
       "statistics": {
-        "viewCount": "29",
+        "viewCount": "30",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
