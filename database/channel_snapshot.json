@@ -1,16 +1,624 @@
 {
-  "timestamp": "2026-11-09T11:58:33.527933+00:00",
+  "timestamp": "2026-11-16T11:55:59.171995+00:00",
   "source": "YouTube Data API v3 (public data)",
   "channel": {
     "id": "UCuTo_47D9JNduAByXvR4utg",
     "statistics": {
-      "viewCount": "37968",
-      "subscriberCount": "57",
+      "viewCount": "47242",
+      "subscriberCount": "66",
       "hiddenSubscriberCount": false,
-      "videoCount": "318"
+      "videoCount": "356"
     }
   },
   "videos": [
+    {
+      "id": "IlinoNpKDiQ",
+      "snippet": {
+        "title": "She Lived as a Man for 36 Years to Protect Her Daughter \u2013 True Story of Maternal Sacrifice",
+        "publishedAt": "2026-11-16T10:40:16Z"
+      },
+      "statistics": {
+        "viewCount": "0",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT7M11S"
+      }
+    },
+    {
+      "id": "25_QFlfQwss",
+      "snippet": {
+        "title": "She Lived as a Man for 36 Years to Protect Her Daughter \u2013 True Story of Maternal Sacrifice #Shorts",
+        "publishedAt": "2026-11-16T10:39:48Z"
+      },
+      "statistics": {
+        "viewCount": "0",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT57S"
+      }
+    },
+    {
+      "id": "Po8T_rf2MC8",
+      "snippet": {
+        "title": "Archerfish's Water Bullet: 5 Mind-Blowing Facts About Nature's Tiny Sniper",
+        "publishedAt": "2026-11-15T20:18:12Z"
+      },
+      "statistics": {
+        "viewCount": "1",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT7M7S"
+      }
+    },
+    {
+      "id": "WYDHxK3Fn70",
+      "snippet": {
+        "title": "Archerfish's Water Bullet: 5 Mind-Blowing Facts About Nature's Tiny Sniper #Shorts",
+        "publishedAt": "2026-11-15T20:17:43Z"
+      },
+      "statistics": {
+        "viewCount": "8",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT51S"
+      }
+    },
+    {
+      "id": "2T1RqLYBXP8",
+      "snippet": {
+        "title": "She Lived as a Man for 50 Years to Protect Her Family | Jennie Hodgers #Shorts",
+        "publishedAt": "2026-11-15T19:17:13Z"
+      },
+      "statistics": {
+        "viewCount": "3",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M6S"
+      }
+    },
+    {
+      "id": "rP9jUapM1V8",
+      "snippet": {
+        "title": "How Emperor Penguin Dads Survive a 4\u2011Month Fast Without Food #Shorts",
+        "publishedAt": "2026-11-15T13:03:10Z"
+      },
+      "statistics": {
+        "viewCount": "66",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT54S"
+      }
+    },
+    {
+      "id": "A7R0L8NH30A",
+      "snippet": {
+        "title": "Humpback Whale Saves Diver from Tiger Shark (Nan Hauser's True Story)",
+        "publishedAt": "2026-11-15T10:34:40Z"
+      },
+      "statistics": {
+        "viewCount": "5",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT10M51S"
+      }
+    },
+    {
+      "id": "tMbnEG2u4cM",
+      "snippet": {
+        "title": "Humpback Whale Saves Diver from Tiger Shark (Nan Hauser's True Story) #Shorts",
+        "publishedAt": "2026-11-15T10:33:16Z"
+      },
+      "statistics": {
+        "viewCount": "200",
+        "likeCount": "4",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT53S"
+      }
+    },
+    {
+      "id": "UMnOrE0JVy8",
+      "snippet": {
+        "title": "David Gulpilil: From Arnhem Land to Hollywood's Brightest Sets | Walkabout Star",
+        "publishedAt": "2026-11-14T19:57:38Z"
+      },
+      "statistics": {
+        "viewCount": "1",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT12M42S"
+      }
+    },
+    {
+      "id": "gWPj6fIhaIA",
+      "snippet": {
+        "title": "David Gulpilil: From Arnhem Land to Hollywood's Brightest Sets | Walkabout Star #Shorts",
+        "publishedAt": "2026-11-14T19:57:03Z"
+      },
+      "statistics": {
+        "viewCount": "18",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT51S"
+      }
+    },
+    {
+      "id": "zl20GMgcs54",
+      "snippet": {
+        "title": "4 Animal Camouflage Masters That Fool Everyone But Other Animals! #Shorts",
+        "publishedAt": "2026-11-14T18:33:41Z"
+      },
+      "statistics": {
+        "viewCount": "30",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M14S"
+      }
+    },
+    {
+      "id": "SbTMH9Au5Lg",
+      "snippet": {
+        "title": "5 Animals That Are Almost Invisible! \ud83e\udd8e\u2728 #Shorts",
+        "publishedAt": "2026-11-14T12:29:14Z"
+      },
+      "statistics": {
+        "viewCount": "130",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M4S"
+      }
+    },
+    {
+      "id": "GoSHN-jI7wk",
+      "snippet": {
+        "title": "Why You Can't Tickle Yourself \u2014 Your Brain Predicts It",
+        "publishedAt": "2026-11-14T09:53:49Z"
+      },
+      "statistics": {
+        "viewCount": "7",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT3M47S"
+      }
+    },
+    {
+      "id": "fgGByncMJ-8",
+      "snippet": {
+        "title": "Why You Can't Tickle Yourself \u2014 Your Brain Predicts It #Shorts",
+        "publishedAt": "2026-11-14T09:53:43Z"
+      },
+      "statistics": {
+        "viewCount": "14",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M12S"
+      }
+    },
+    {
+      "id": "c9oe6ugmMAc",
+      "snippet": {
+        "title": "This Metal Melts In Your Hand \u2014 Gallium's 85.6\u00b0F Secret",
+        "publishedAt": "2026-11-13T21:21:58Z"
+      },
+      "statistics": {
+        "viewCount": "32",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT3M58S"
+      }
+    },
+    {
+      "id": "ky45pj3FcfI",
+      "snippet": {
+        "title": "This Metal Melts In Your Hand \u2014 Gallium's 85.6\u00b0F Secret #Shorts",
+        "publishedAt": "2026-11-13T21:21:53Z"
+      },
+      "statistics": {
+        "viewCount": "88",
+        "likeCount": "2",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M2S"
+      }
+    },
+    {
+      "id": "BFCqHgoHAH0",
+      "snippet": {
+        "title": "Why Astronauts Get Taller in Space \ud83d\ude80 (Then Shrink Back!) #Shorts",
+        "publishedAt": "2026-11-13T20:03:53Z"
+      },
+      "statistics": {
+        "viewCount": "17",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT58S"
+      }
+    },
+    {
+      "id": "WIOPvhJFcQ4",
+      "snippet": {
+        "title": "5 Animals Hiding in Plain Sight \u2014 Can You Spot Them in 3 Seconds? \ud83d\udc3e #Shorts",
+        "publishedAt": "2026-11-13T13:27:01Z"
+      },
+      "statistics": {
+        "viewCount": "43",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M5S"
+      }
+    },
+    {
+      "id": "OUYkGSmyIVM",
+      "snippet": {
+        "title": "Can You Spot the Animal Hiding in Plain Sight? \u2014 Camouflage Challenge",
+        "publishedAt": "2026-11-13T10:27:38Z"
+      },
+      "statistics": {
+        "viewCount": "26",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT8M31S"
+      }
+    },
+    {
+      "id": "53G9XMC1UEU",
+      "snippet": {
+        "title": "Can You Spot the Animal Hiding in Plain Sight? \u2014 Camouflage Challenge #Shorts",
+        "publishedAt": "2026-11-13T10:27:24Z"
+      },
+      "statistics": {
+        "viewCount": "93",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT59S"
+      }
+    },
+    {
+      "id": "XQeOlZaouio",
+      "snippet": {
+        "title": "T.E. Lawrence Refused a Knighthood to Protect His Fighters' Freedom",
+        "publishedAt": "2026-11-12T21:58:54Z"
+      },
+      "statistics": {
+        "viewCount": "62",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT5M57S"
+      }
+    },
+    {
+      "id": "6D2A-IFS08M",
+      "snippet": {
+        "title": "T.E. Lawrence Refused a Knighthood to Protect His Fighters' Freedom #Shorts",
+        "publishedAt": "2026-11-12T21:58:24Z"
+      },
+      "statistics": {
+        "viewCount": "164",
+        "likeCount": "4",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT53S"
+      }
+    },
+    {
+      "id": "EaDxTJqkS0w",
+      "snippet": {
+        "title": "From Rock Bottom to Gold: The True Story of the Redeem Team #Shorts",
+        "publishedAt": "2026-11-12T20:28:38Z"
+      },
+      "statistics": {
+        "viewCount": "65",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT53S"
+      }
+    },
+    {
+      "id": "DcxFSIZkJZw",
+      "snippet": {
+        "title": "5 Mind-Blowing Animal Farming Facts You Didn't Know #Shorts",
+        "publishedAt": "2026-11-12T14:07:20Z"
+      },
+      "statistics": {
+        "viewCount": "938",
+        "likeCount": "6",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M4S"
+      }
+    },
+    {
+      "id": "cU-5-wubb8Y",
+      "snippet": {
+        "title": "Why Ice Sinks in Saltwater: A Mind-Bending Physics Shock",
+        "publishedAt": "2026-11-11T22:04:57Z"
+      },
+      "statistics": {
+        "viewCount": "47",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT7M10S"
+      }
+    },
+    {
+      "id": "83-XmhkIO90",
+      "snippet": {
+        "title": "Why Ice Sinks in Saltwater: A Mind-Bending Physics Shock #Shorts",
+        "publishedAt": "2026-11-11T22:04:32Z"
+      },
+      "statistics": {
+        "viewCount": "691",
+        "likeCount": "6",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT47S"
+      }
+    },
+    {
+      "id": "3-gy5lv5vtA",
+      "snippet": {
+        "title": "From Car Park Bench to Classroom: Homeless Veteran Builds School for 200 Orphans #Shorts",
+        "publishedAt": "2026-11-11T19:56:35Z"
+      },
+      "statistics": {
+        "viewCount": "238",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT56S"
+      }
+    },
+    {
+      "id": "x7DKYGRgb6w",
+      "snippet": {
+        "title": "The Moon\u2019s Mysterious Far Side: 5 Space Facts Kids Should Know #Shorts",
+        "publishedAt": "2026-11-11T13:16:18Z"
+      },
+      "statistics": {
+        "viewCount": "166",
+        "likeCount": "1",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT52S"
+      }
+    },
+    {
+      "id": "VWAcyNEOdfM",
+      "snippet": {
+        "title": "If Elephants Drank Like Straws, They'd Drown",
+        "publishedAt": "2026-11-11T10:21:44Z"
+      },
+      "statistics": {
+        "viewCount": "39",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT8M40S"
+      }
+    },
+    {
+      "id": "7Jjynw8pVEQ",
+      "snippet": {
+        "title": "If Elephants Drank Like Straws, They'd Drown #Shorts",
+        "publishedAt": "2026-11-11T10:20:40Z"
+      },
+      "statistics": {
+        "viewCount": "1230",
+        "likeCount": "21",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT55S"
+      }
+    },
+    {
+      "id": "qEgLlu6rfIM",
+      "snippet": {
+        "title": "The Frog That Turns Its Throat Into a Nursery \u2013 Darwin's Weirdest Parenting Secret",
+        "publishedAt": "2026-11-10T21:28:36Z"
+      },
+      "statistics": {
+        "viewCount": "11",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT9M14S"
+      }
+    },
+    {
+      "id": "7O4LAf8YdX8",
+      "snippet": {
+        "title": "The Frog That Turns Its Throat Into a Nursery \u2013 Darwin's Weirdest Parenting Secret #Shorts",
+        "publishedAt": "2026-11-10T21:28:03Z"
+      },
+      "statistics": {
+        "viewCount": "919",
+        "likeCount": "13",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT54S"
+      }
+    },
+    {
+      "id": "ffd0x2LKzz8",
+      "snippet": {
+        "title": "5 Counterintuitive Physics Tricks That Will Blow Your Mind in 60 Seconds #Shorts",
+        "publishedAt": "2026-11-10T20:01:49Z"
+      },
+      "statistics": {
+        "viewCount": "856",
+        "likeCount": "7",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M2S"
+      }
+    },
+    {
+      "id": "aD6y8gUcQgU",
+      "snippet": {
+        "title": "The Cut That Made Michael Jordan: How Rejection Became His Superpower #Shorts",
+        "publishedAt": "2026-11-10T13:48:18Z"
+      },
+      "statistics": {
+        "viewCount": "916",
+        "likeCount": "9",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT57S"
+      }
+    },
+    {
+      "id": "dKaC6g-csyc",
+      "snippet": {
+        "title": "This Turtle Can Breathe Through Its Shell: Shocking Amphibian Transformation Facts",
+        "publishedAt": "2026-11-10T00:04:31Z"
+      },
+      "statistics": {
+        "viewCount": "5",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT7M42S"
+      }
+    },
+    {
+      "id": "8Lk5nSmPCx8",
+      "snippet": {
+        "title": "This Turtle Can Breathe Through Its Shell: Shocking Amphibian Transformation Facts #Shorts",
+        "publishedAt": "2026-11-10T00:04:10Z"
+      },
+      "statistics": {
+        "viewCount": "871",
+        "likeCount": "20",
+        "favoriteCount": "0",
+        "commentCount": "1"
+      },
+      "contentDetails": {
+        "duration": "PT46S"
+      }
+    },
+    {
+      "id": "FF53RnKDvx0",
+      "snippet": {
+        "title": "16-Year-Old Builds $2 Water Filter That Saves 10,000 Lives #Shorts",
+        "publishedAt": "2026-11-09T22:50:29Z"
+      },
+      "statistics": {
+        "viewCount": "28",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT1M6S"
+      }
+    },
+    {
+      "id": "q5biThfcyuM",
+      "snippet": {
+        "title": "She Fostered 200 Dying Kids: The Secret Angel They Never Forgot #Shorts",
+        "publishedAt": "2026-11-09T14:21:03Z"
+      },
+      "statistics": {
+        "viewCount": "10",
+        "likeCount": "0",
+        "favoriteCount": "0",
+        "commentCount": "0"
+      },
+      "contentDetails": {
+        "duration": "PT59S"
+      }
+    },
     {
       "id": "By-q0EFTARs",
       "snippet": {
@@ -34,8 +642,8 @@
         "publishedAt": "2026-11-08T19:31:02Z"
       },
       "statistics": {
-        "viewCount": "777",
-        "likeCount": "6",
+        "viewCount": "993",
+        "likeCount": "7",
         "favoriteCount": "0",
         "commentCount": "0"
       },
@@ -50,7 +658,7 @@
         "publishedAt": "2026-11-08T18:09:58Z"
       },
       "statistics": {
-        "viewCount": "17",
+        "viewCount": "21",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -66,7 +674,7 @@
         "publishedAt": "2026-11-08T12:15:06Z"
       },
       "statistics": {
-        "viewCount": "6",
+        "viewCount": "10",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -98,7 +706,7 @@
         "publishedAt": "2026-11-08T10:03:58Z"
       },
       "statistics": {
-        "viewCount": "5",
+        "viewCount": "7",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -114,7 +722,7 @@
         "publishedAt": "2026-11-07T19:18:46Z"
       },
       "statistics": {
-        "viewCount": "2",
+        "viewCount": "3",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -146,7 +754,7 @@
         "publishedAt": "2026-11-07T18:02:08Z"
       },
       "statistics": {
-        "viewCount": "159",
+        "viewCount": "184",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -162,7 +770,7 @@
         "publishedAt": "2026-11-07T11:56:16Z"
       },
       "statistics": {
-        "viewCount": "6",
+        "viewCount": "7",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -178,8 +786,8 @@
         "publishedAt": "2026-11-07T09:35:32Z"
       },
       "statistics": {
-        "viewCount": "2",
-        "likeCount": "0",
+        "viewCount": "3",
+        "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
       },
@@ -210,8 +818,8 @@
         "publishedAt": "2026-11-06T20:57:06Z"
       },
       "statistics": {
-        "viewCount": "3",
-        "likeCount": "0",
+        "viewCount": "15",
+        "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
       },
@@ -242,7 +850,7 @@
         "publishedAt": "2026-11-06T19:44:14Z"
       },
       "statistics": {
-        "viewCount": "13",
+        "viewCount": "12",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -274,7 +882,7 @@
         "publishedAt": "2026-11-05T21:33:27Z"
       },
       "statistics": {
-        "viewCount": "137",
+        "viewCount": "160",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -290,7 +898,7 @@
         "publishedAt": "2026-11-05T21:32:48Z"
       },
       "statistics": {
-        "viewCount": "244",
+        "viewCount": "246",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -306,7 +914,7 @@
         "publishedAt": "2026-11-05T13:29:44Z"
       },
       "statistics": {
-        "viewCount": "28",
+        "viewCount": "31",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -354,7 +962,7 @@
         "publishedAt": "2026-11-04T21:12:04Z"
       },
       "statistics": {
-        "viewCount": "44",
+        "viewCount": "47",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -370,7 +978,7 @@
         "publishedAt": "2026-11-04T21:11:38Z"
       },
       "statistics": {
-        "viewCount": "18",
+        "viewCount": "19",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -418,7 +1026,7 @@
         "publishedAt": "2026-11-04T10:22:16Z"
       },
       "statistics": {
-        "viewCount": "86",
+        "viewCount": "89",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -450,7 +1058,7 @@
         "publishedAt": "2026-11-03T20:59:16Z"
       },
       "statistics": {
-        "viewCount": "22",
+        "viewCount": "24",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -466,7 +1074,7 @@
         "publishedAt": "2026-11-03T20:58:59Z"
       },
       "statistics": {
-        "viewCount": "97",
+        "viewCount": "98",
         "likeCount": "3",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -498,7 +1106,7 @@
         "publishedAt": "2026-11-03T10:47:11Z"
       },
       "statistics": {
-        "viewCount": "151",
+        "viewCount": "153",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -514,7 +1122,7 @@
         "publishedAt": "2026-11-03T10:44:17Z"
       },
       "statistics": {
-        "viewCount": "7",
+        "viewCount": "15",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -562,7 +1170,7 @@
         "publishedAt": "2026-11-02T22:08:46Z"
       },
       "statistics": {
-        "viewCount": "55",
+        "viewCount": "56",
         "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -626,7 +1234,7 @@
         "publishedAt": "2026-11-01T19:20:11Z"
       },
       "statistics": {
-        "viewCount": "24",
+        "viewCount": "25",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -690,7 +1298,7 @@
         "publishedAt": "2026-11-01T10:17:51Z"
       },
       "statistics": {
-        "viewCount": "17",
+        "viewCount": "21",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -738,7 +1346,7 @@
         "publishedAt": "2026-10-31T09:27:04Z"
       },
       "statistics": {
-        "viewCount": "3",
+        "viewCount": "4",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -866,7 +1474,7 @@
         "publishedAt": "2026-10-29T09:29:32Z"
       },
       "statistics": {
-        "viewCount": "4",
+        "viewCount": "11",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1058,7 +1666,7 @@
         "publishedAt": "2026-10-26T20:37:41Z"
       },
       "statistics": {
-        "viewCount": "17",
+        "viewCount": "20",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1122,7 +1730,7 @@
         "publishedAt": "2026-10-25T16:47:28Z"
       },
       "statistics": {
-        "viewCount": "208",
+        "viewCount": "209",
         "likeCount": "9",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1138,7 +1746,7 @@
         "publishedAt": "2026-10-25T10:09:09Z"
       },
       "statistics": {
-        "viewCount": "271",
+        "viewCount": "278",
         "likeCount": "4",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1154,7 +1762,7 @@
         "publishedAt": "2026-10-25T08:28:52Z"
       },
       "statistics": {
-        "viewCount": "6",
+        "viewCount": "21",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1282,7 +1890,7 @@
         "publishedAt": "2026-10-22T10:52:35Z"
       },
       "statistics": {
-        "viewCount": "43",
+        "viewCount": "44",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1314,7 +1922,7 @@
         "publishedAt": "2026-10-22T08:08:36Z"
       },
       "statistics": {
-        "viewCount": "15",
+        "viewCount": "16",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1330,7 +1938,7 @@
         "publishedAt": "2026-10-21T17:35:26Z"
       },
       "statistics": {
-        "viewCount": "36",
+        "viewCount": "37",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1346,7 +1954,7 @@
         "publishedAt": "2026-10-21T10:34:08Z"
       },
       "statistics": {
-        "viewCount": "79",
+        "viewCount": "81",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1474,7 +2082,7 @@
         "publishedAt": "2026-10-19T20:24:52Z"
       },
       "statistics": {
-        "viewCount": "528",
+        "viewCount": "530",
         "likeCount": "5",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1506,7 +2114,7 @@
         "publishedAt": "2026-10-19T08:30:53Z"
       },
       "statistics": {
-        "viewCount": "68",
+        "viewCount": "71",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1522,7 +2130,7 @@
         "publishedAt": "2026-10-19T08:30:21Z"
       },
       "statistics": {
-        "viewCount": "110",
+        "viewCount": "111",
         "likeCount": "3",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1538,7 +2146,7 @@
         "publishedAt": "2026-10-18T17:46:04Z"
       },
       "statistics": {
-        "viewCount": "43",
+        "viewCount": "51",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1554,7 +2162,7 @@
         "publishedAt": "2026-10-18T17:44:59Z"
       },
       "statistics": {
-        "viewCount": "123",
+        "viewCount": "125",
         "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1602,7 +2210,7 @@
         "publishedAt": "2026-10-17T15:51:02Z"
       },
       "statistics": {
-        "viewCount": "410",
+        "viewCount": "418",
         "likeCount": "6",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1618,7 +2226,7 @@
         "publishedAt": "2026-10-17T09:36:27Z"
       },
       "statistics": {
-        "viewCount": "921",
+        "viewCount": "924",
         "likeCount": "6",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1634,7 +2242,7 @@
         "publishedAt": "2026-10-17T07:34:51Z"
       },
       "statistics": {
-        "viewCount": "12",
+        "viewCount": "16",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1650,7 +2258,7 @@
         "publishedAt": "2026-10-17T07:34:27Z"
       },
       "statistics": {
-        "viewCount": "632",
+        "viewCount": "636",
         "likeCount": "5",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1714,7 +2322,7 @@
         "publishedAt": "2026-10-15T15:37:25Z"
       },
       "statistics": {
-        "viewCount": "108",
+        "viewCount": "110",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1730,7 +2338,7 @@
         "publishedAt": "2026-10-15T14:35:39Z"
       },
       "statistics": {
-        "viewCount": "379",
+        "viewCount": "381",
         "likeCount": "5",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1794,7 +2402,7 @@
         "publishedAt": "2026-10-14T10:28:53Z"
       },
       "statistics": {
-        "viewCount": "459",
+        "viewCount": "460",
         "likeCount": "8",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1890,7 +2498,7 @@
         "publishedAt": "2026-10-10T19:11:41Z"
       },
       "statistics": {
-        "viewCount": "70",
+        "viewCount": "72",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1906,7 +2514,7 @@
         "publishedAt": "2026-10-10T19:11:17Z"
       },
       "statistics": {
-        "viewCount": "135",
+        "viewCount": "136",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1938,7 +2546,7 @@
         "publishedAt": "2026-10-10T09:18:01Z"
       },
       "statistics": {
-        "viewCount": "117",
+        "viewCount": "125",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -1954,7 +2562,7 @@
         "publishedAt": "2026-10-10T09:17:42Z"
       },
       "statistics": {
-        "viewCount": "369",
+        "viewCount": "373",
         "likeCount": "4",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2002,7 +2610,7 @@
         "publishedAt": "2026-10-08T19:01:55Z"
       },
       "statistics": {
-        "viewCount": "67",
+        "viewCount": "68",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2034,7 +2642,7 @@
         "publishedAt": "2026-10-07T19:20:01Z"
       },
       "statistics": {
-        "viewCount": "19",
+        "viewCount": "20",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2242,7 +2850,7 @@
         "publishedAt": "2026-10-04T08:56:18Z"
       },
       "statistics": {
-        "viewCount": "268",
+        "viewCount": "269",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "1"
@@ -2434,7 +3042,7 @@
         "publishedAt": "2026-09-29T18:14:37Z"
       },
       "statistics": {
-        "viewCount": "58",
+        "viewCount": "59",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2482,7 +3090,7 @@
         "publishedAt": "2026-09-28T09:12:07Z"
       },
       "statistics": {
-        "viewCount": "90",
+        "viewCount": "91",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2562,7 +3170,7 @@
         "publishedAt": "2026-09-26T08:09:57Z"
       },
       "statistics": {
-        "viewCount": "329",
+        "viewCount": "330",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2722,7 +3330,7 @@
         "publishedAt": "2026-09-22T08:24:18Z"
       },
       "statistics": {
-        "viewCount": "37",
+        "viewCount": "39",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -2882,7 +3490,7 @@
         "publishedAt": "2026-09-20T08:18:00Z"
       },
       "statistics": {
-        "viewCount": "439",
+        "viewCount": "441",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3202,7 +3810,7 @@
         "publishedAt": "2026-09-12T15:49:32Z"
       },
       "statistics": {
-        "viewCount": "1114",
+        "viewCount": "1115",
         "likeCount": "10",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3314,7 +3922,7 @@
         "publishedAt": "2026-09-10T16:40:10Z"
       },
       "statistics": {
-        "viewCount": "34",
+        "viewCount": "35",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3394,7 +4002,7 @@
         "publishedAt": "2026-09-07T07:51:58Z"
       },
       "statistics": {
-        "viewCount": "5",
+        "viewCount": "7",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3442,7 +4050,7 @@
         "publishedAt": "2026-09-06T09:37:37Z"
       },
       "statistics": {
-        "viewCount": "366",
+        "viewCount": "367",
         "likeCount": "3",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3634,7 +4242,7 @@
         "publishedAt": "2026-09-01T08:17:53Z"
       },
       "statistics": {
-        "viewCount": "875",
+        "viewCount": "877",
         "likeCount": "7",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3698,7 +4306,7 @@
         "publishedAt": "2026-08-29T18:24:04Z"
       },
       "statistics": {
-        "viewCount": "865",
+        "viewCount": "866",
         "likeCount": "13",
         "favoriteCount": "0",
         "commentCount": "1"
@@ -3730,7 +4338,7 @@
         "publishedAt": "2026-08-29T11:56:04Z"
       },
       "statistics": {
-        "viewCount": "124",
+        "viewCount": "126",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -3858,7 +4466,7 @@
         "publishedAt": "2026-08-25T03:49:18Z"
       },
       "statistics": {
-        "viewCount": "28",
+        "viewCount": "29",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -4098,7 +4706,7 @@
         "publishedAt": "2026-08-18T13:30:14Z"
       },
       "statistics": {
-        "viewCount": "41",
+        "viewCount": "43",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -4482,7 +5090,7 @@
         "publishedAt": "2026-08-12T15:54:22Z"
       },
       "statistics": {
-        "viewCount": "4",
+        "viewCount": "5",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -4530,7 +5138,7 @@
         "publishedAt": "2026-08-12T04:57:59Z"
       },
       "statistics": {
-        "viewCount": "9",
+        "viewCount": "10",
         "likeCount": "0",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -4786,7 +5394,7 @@
         "publishedAt": "2026-08-01T09:51:04Z"
       },
       "statistics": {
-        "viewCount": "6",
+        "viewCount": "7",
         "likeCount": "1",
         "favoriteCount": "0",
         "commentCount": "0"
@@ -5042,7 +5650,7 @@
         "publishedAt": "2026-07-30T10:19:22Z"
       },
       "statistics": {
-        "viewCount": "27",
+        "viewCount": "28",
         "likeCount": "2",
         "favoriteCount": "0",
         "commentCount": "0"
