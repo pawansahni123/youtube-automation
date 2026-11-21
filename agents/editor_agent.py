@@ -92,7 +92,7 @@ def chunk_words(narration, max_words=5):
     return [" ".join(words[i:i + max_words]) for i in range(0, len(words), max_words)]
 
 
-def build_srt_captions(sections, durations):
+def build_srt_captions(sections, durations, max_words=5):
     """Build an SRT subtitle file's contents, evenly spreading each section's
     caption chunks across that section's allotted duration."""
     lines = []
@@ -100,7 +100,7 @@ def build_srt_captions(sections, durations):
     current_time = 0.0
 
     for section, duration in zip(sections, durations):
-        chunks = chunk_words(section["narration"])
+        chunks = chunk_words(section["narration"], max_words=max_words)
         if not chunks:
             current_time += duration
             continue
@@ -175,11 +175,14 @@ def concat_clips(clip_paths, temp_dir, output_path):
     subprocess.run(cmd, capture_output=True, check=True)
 
 
-# Caption styling per format (bigger/lower on vertical Shorts, smaller on horizontal long-form)
+# SRT defaults to a small ASS canvas. Set the Shorts canvas explicitly so
+# font size and margins are output pixels, rather than scaling captions onto
+# the subject's face. Leave room below for the title and right-side controls.
 CAPTION_STYLES = {
-    "short": "FontName=Arial,FontSize=20,Bold=1,PrimaryColour=&H00FFFFFF,"
+    "short": "PlayResX=1080,PlayResY=1920,FontName=Arial,FontSize=58,Bold=1,"
+             "PrimaryColour=&H00FFFFFF,"
              "OutlineColour=&H00000000,BorderStyle=1,Outline=3,Shadow=0,"
-             "Alignment=2,MarginV=180",
+             "Alignment=2,MarginV=380,MarginL=100,MarginR=220",
     "long": "FontName=Arial,FontSize=14,Bold=1,PrimaryColour=&H00FFFFFF,"
             "OutlineColour=&H00000000,BorderStyle=1,Outline=2,Shadow=0,"
             "Alignment=2,MarginV=80",
@@ -229,7 +232,9 @@ def assemble_video(script, media_manifest, audio_path, script_type):
         concat_clips(clip_paths, temp_dir, silent_video_path)
 
         print(f"[Editor Agent] ({script_type}) Generating captions...")
-        captions_content = build_srt_captions(sections, durations)
+        captions_content = build_srt_captions(
+            sections, durations, max_words=3 if script_type == "short" else 5,
+        )
         captions_path = os.path.join(temp_dir, "captions.srt")
         with open(captions_path, "w", encoding="utf-8") as f:
             f.write(captions_content)
